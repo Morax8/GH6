@@ -11,7 +11,7 @@ export default function Home() {
       <main className="relative min-h-screen w-full bg-white text-black overflow-hidden">
         {/* Grid Guides as Background Overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <GridGuides />
+          {/* <GridGuides /> */}
         </div>
         {/* Navbar */}
         <div className="absolute top-0 left-0 w-full z-[999]">
@@ -54,9 +54,8 @@ export default function Home() {
                 <Image
                   src="/images/homepage.png"
                   alt="Full Image"
-                  layout="fill"
-                  objectFit="cover"
-                  className="mask-b-from-20% mask-b-to-100% "
+                  fill
+                  className="object-cover mask-b-from-20% mask-b-to-100%"
                 />
               </div>
             </div>
@@ -235,7 +234,7 @@ export default function Home() {
         {/* fifth content */}
         <div className="flex h-screen px-10 py-8 gap-10 mx-32">
           {/* supergraphic */}
-          <div className="absolute inset-0 w-[400px] h-full">
+          <div className="absolute inset-0 w-[400px] h-[400px] z-20">
             <Image
               src="/Assets/hIMGsupergraphic.png"
               alt="Supergraphic"
@@ -298,12 +297,23 @@ export default function Home() {
           </div>
         </div>
 
-        {/* carousel full width */}
-        <div className="w-full bg-white py-12">
-          <MarqueeGallery />
+        <div className="relative w-full py-12">
+          {/* Ini pastiin ada wrapper div buat z-index */}
+          <div className="relative z-20 bg-transparent">
+            <MarqueeGallery />
+          </div>
+
+          {/* Pattern Fade bawah */}
+          <div className="absolute -bottom-[1px] left-0 w-full h-[1000px] z-10 pointer-events-none">
+            <Image
+              src="/Assets/patternFade.png"
+              alt="Pattern Fade"
+              fill
+              className="opacity-50"
+            />
+          </div>
         </div>
       </main>
     </>
   );
 }
-
