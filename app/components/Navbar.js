@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation';    
+import Link from "next/link";
 
 export default function Navbar() {
   const router = useRouter();
@@ -13,13 +14,16 @@ export default function Navbar() {
           onClick={() => router.push("/")}>
           Home
         </li>
-        <li 
-        className="font-bold  hover:text-gray-700 cursor-pointer"
-        onClick={() => router.push("/explorePage")}
+        <li className="font-bold hover:text-gray-700 cursor-pointer"
+          onClick={() => router.push("/explorePage")}
         >
           Explore
         </li>
-        <li className="font-bold  hover:text-gray-700 cursor-pointer">Games</li>
+        <li className="font-bold hover:text-gray-700 cursor-pointer"
+          onClick={() => router.push("/game")}
+        >
+          Games
+        </li>
       </ul>
     </nav>
   );
