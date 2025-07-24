@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function TimerAngel({ timeLeft, setTimeLeft, onComplete = () => {}, className = '' }) {
+export default function TimerForGuessingGame({ timeLeft, setTimeLeft, onComplete = () => {}, className = '' }) {
   useEffect(() => {
     if (timeLeft <= 0) {
       onComplete();
@@ -9,7 +9,13 @@ export default function TimerAngel({ timeLeft, setTimeLeft, onComplete = () => {
     }
 
     const timer = setInterval(() => {
-      setTimeLeft(prev => prev - 1);
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
