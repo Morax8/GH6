@@ -2,10 +2,40 @@
 import Navbar from "./components/Navbar.js";
 import GridGuides from "./components/GridGuides.js";
 import MarqueeGallery from "./components/Marquee.js";
+import { getDistanceFromLatLonInKm } from "./utils/getDistance.js";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
 export default function Home() {
+  const [distance, setDistance] = useState(null);
+
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const userLat = pos.coords.latitude;
+          const userLon = pos.coords.longitude;
+
+          // Koordinat Candi Borobudur
+          const borobudurLat = -7.6079;
+          const borobudurLon = 110.2038;
+
+          const dist = getDistanceFromLatLonInKm(
+            userLat,
+            userLon,
+            borobudurLat,
+            borobudurLon
+          );
+
+          setDistance(dist.toFixed(1)); // contoh 14.3 km
+        },
+        (err) => {
+          console.error("Lokasi gagal diakses:", err);
+        }
+      );
+    }
+  }, []);
   return (
     <>
       <main className="relative min-h-screen w-full bg-white text-black overflow-hidden">
@@ -188,7 +218,7 @@ export default function Home() {
 
             {/* Kanan: text */}
             <div className="flex flex-col justify-center p-8 bg-white">
-              <div className="ml-20">
+              <div className="ml-18">
                 <h1
                   className="text-5xl font-medium mb-4"
                   style={{
@@ -211,7 +241,10 @@ export default function Home() {
                     fontFamily: "var(--montserrat.variable)",
                   }}
                 >
-                  is <span className="font-bold text-[#D24D50]">500 Km</span>{" "}
+                  is{" "}
+                  <span className="font-bold text-[#D24D50]">
+                    {distance ? `${distance} Km ` : "Loading..."}
+                  </span>
                   from where you are
                 </h1>
                 <p
@@ -233,15 +266,6 @@ export default function Home() {
 
         {/* fifth content */}
         <div className="flex h-screen px-10 py-8 gap-10 mx-32">
-          {/* supergraphic */}
-          <div className="absolute inset-0 w-[400px] h-[400px] z-20">
-            <Image
-              src="/Assets/hIMGsupergraphic.png"
-              alt="Supergraphic"
-              fill
-              className="object-cover h-full w-full rotate-90"
-            />
-          </div>
           {/* LEFT SIDE */}
           <div className="flex flex-col justify-center w-[600px]">
             <h1 className="text-4xl font-bold mb-2">Today’s Topic:</h1>
@@ -252,7 +276,6 @@ export default function Home() {
               North <br /> Sumatra
             </h1>
           </div>
-
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-[2.5fr_2fr] grid-rows-7 gap-5 flex-1">
             {/* div1 */}
