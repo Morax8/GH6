@@ -9,31 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@tailwindcss/cli": "^4.1.11",
     "keen-slider": "^6.8.6",
     "next": "15.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-fast-marquee": "^1.6.5"
-=======
-    "next": "^15.4.3",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
->>>>>>> 72bacc58a54f582b6bb648302f8042356684dd0f
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-<<<<<<< HEAD
-    "eslint": "^9",
-    "eslint-config-next": "15.4.3",
-    "tailwindcss": "^4.1.11"
-=======
     "daisyui": "^5.0.46",
     "eslint": "^9",
     "eslint-config-next": "15.4.3",
-    "tailwindcss": "^4"
->>>>>>> 72bacc58a54f582b6bb648302f8042356684dd0f
+    "tailwindcss": "^4.1.11"
   }
 }
