@@ -3,6 +3,7 @@ import GridGuides from "../components/GridGuides.js";
 import "../game/page.css"; // Import CSS eksternal
 
 import Image from "next/image.js";
+import Link from "next/link";
 
 export default function Game() {
   return (
@@ -32,9 +33,9 @@ export default function Game() {
             <div className="diamond">
               <div className="diamond-content"><span>Where is it from?</span></div>
             </div>
-            <div className="diamond">
+            <Link href="/game/cooking" className="diamond">
               <div className="diamond-content"><span>What's the Dish?</span></div>
-            </div>
+            </Link>
             <div className="diamond">
               <div className="diamond-content"><span>What's the Answer?</span></div>
             </div>

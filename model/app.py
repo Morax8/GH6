@@ -3,12 +3,15 @@ import openai
 import random
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
+
 
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
+CORS(app)
 
 dishes = [
     "Rendang", "Nasi Goreng", "Sate Ayam", "Bakso", "Soto Ayam",
@@ -23,7 +26,7 @@ def generate_recipe():
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a professional Indonesian chef."},
-            {"role": "user", "content": f"Please give me a traditional recipe for {dish}. Include ingredients, steps, and a short fun intro."}
+            {"role": "user", "content": f"Please give me a traditional recipe for {dish}. Include ingredients, and steps. Make it concise"}
         ],
         temperature=0.7
     )
@@ -31,7 +34,7 @@ def generate_recipe():
 
     image_response = openai.images.generate(
         model="dall-e-2",
-        prompt=f"illustration of {dish}, HD, a delicious traditional Indonesian food | NO TEXT",
+        prompt=f"Realistic Ultra HD {dish}, HD, a delicious traditional Indonesian food | NO TEXT",
         n=1,
         size="256x256"
     )
