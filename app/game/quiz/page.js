@@ -43,7 +43,7 @@ export default function Cooking() {
         </div>
 
           <button className="bg-black text-white text-2xl px-6 py-3 rounded-full w-60 pointer-auto cursor-pointer"
-            onClick={()=>{router.push('/game/cooking/recipe')}}
+            onClick={()=>{router.push('/game/quiz/play')}}
           >
               Let's test!
           </button>

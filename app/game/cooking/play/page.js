@@ -68,7 +68,7 @@ export default function Cooking() {
             }, 2000);
         } else {
             setFeedback("Wrong!");
-            // Do not increment correctCount
+            
         }
     };
 
@@ -128,14 +128,15 @@ export default function Cooking() {
                 </div> 
             </div>
 
+            <div className="fade-in delay-3">
             <ChoiceGrid
             choices={current.choices}
             onChoiceClick={handleChoiceClick}
             selectedIndex={selectedIndex}
             correctIndex={current.correctIndex}
             isLocked={isLocked}
-            />
-
+            />    
+            </div>
             <div>
 
             </div>
