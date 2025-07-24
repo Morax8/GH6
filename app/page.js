@@ -1,5 +1,7 @@
+"use client";
 import Navbar from "./components/Navbar.js";
 import GridGuides from "./components/GridGuides.js";
+import MarqueeGallery from "./components/Marquee.js";
 
 import Image from "next/image";
 
@@ -8,9 +10,9 @@ export default function Home() {
     <>
       <main className="relative min-h-screen w-full bg-white text-black overflow-hidden">
         {/* Grid Guides as Background Overlay */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* <div className="absolute inset-0 z-0 pointer-events-none">
           <GridGuides />
-        </div>
+        </div> */}
         {/* Navbar */}
         <div className="absolute top-0 left-0 w-full z-[999]">
           <Navbar />
@@ -23,9 +25,8 @@ export default function Home() {
             <Image
               src="/Assets/patternFade.png"
               alt="Pattern Fade"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-50 rotate-180"
+              fill
+              className="object-cover opacity-50 rotate-180"
             />
           </div>
 
@@ -160,6 +161,146 @@ export default function Home() {
               ut dui nec ipsum tristique convallis non sit amet sapien.
             </p>
           </div>
+        </div>
+
+        {/* fourth content */}
+        <section className=" relative">
+          {/* Pattern Fade */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-50 z-10 px-32">
+            <Image
+              src="/Assets/patternFade.png"
+              alt="Pattern Fade"
+              fill
+              className="object-cover opacity-50 rotate-180"
+            />
+          </div>
+
+          <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 mx-32 relative">
+            {/* Kiri: grid image placeholder */}
+            <div className="grid grid-cols-3 grid-rows-8 gap-5 bg-white z-20">
+              <div className="col-start-1 col-end-2 row-start-1 row-end-2 bg-gray-300"></div>
+              <div className="col-start-1 col-end-2 row-start-2 row-end-6 bg-gray-300"></div>
+              <div className="col-start-1 col-end-2 row-start-6 row-end-8 bg-gray-300"></div>
+              <div className="col-start-2 col-end-3 row-start-1 row-end-5 bg-gray-300"></div>
+              <div className="col-start-2 col-end-3 row-start-5 row-end-9 bg-gray-300"></div>
+              <div className="col-start-3 col-end-4 row-start-1 row-end-3 bg-gray-300"></div>
+              <div className="col-start-3 col-end-4 row-start-3 row-end-7 bg-gray-300"></div>
+            </div>
+
+            {/* Kanan: text */}
+            <div className="flex flex-col justify-center p-8 bg-white">
+              <div className="ml-20">
+                <h1
+                  className="text-5xl font-medium mb-4"
+                  style={{
+                    fontFamily: "var(--montserrat.variable)",
+                  }}
+                >
+                  Did you know?
+                </h1>
+                <h1
+                  className="text-9xl font-bold mb-4"
+                  style={{
+                    fontFamily: "var(--montserrat.variable)",
+                  }}
+                >
+                  Borobudur Temple
+                </h1>
+                <h1
+                  className="text-5xl font-medium mb-8"
+                  style={{
+                    fontFamily: "var(--montserrat.variable)",
+                  }}
+                >
+                  is <span className="font-bold text-[#D24D50]">500 Km</span>{" "}
+                  from where you are
+                </h1>
+                <p
+                  className="mt-2 text-2xl leading-snug mb-10"
+                  style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                  aliquet laoreet dolor, eget consectetur orci tempus vel.
+                  Quisque ut dui nec ipsum tristique convallis non sit amet
+                  sapien.
+                </p>
+                <button className="bg-black text-white mt-6 text-2xl px-6 py-3 rounded-full w-60">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* fifth content */}
+        <div className="flex h-screen px-10 py-8 gap-10 mx-32">
+          {/* supergraphic */}
+          <div className="absolute inset-0 w-[400px] h-full">
+            <Image
+              src="/Assets/hIMGsupergraphic.png"
+              alt="Supergraphic"
+              fill
+              className="object-cover h-full w-full rotate-90"
+            />
+          </div>
+          {/* LEFT SIDE */}
+          <div className="flex flex-col justify-center w-[600px]">
+            <h1 className="text-4xl font-bold mb-2">Today’s Topic:</h1>
+            <h1
+              className="text-9xl font-bold leading-tight"
+              style={{ fontFamily: "var(--montserrat.variable)" }}
+            >
+              North <br /> Sumatra
+            </h1>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="grid grid-cols-[2.5fr_2fr] grid-rows-7 gap-5 flex-1">
+            {/* div1 */}
+            <div className="col-start-1 col-end-2 row-start-1 row-end-5 relative bg-gray-300">
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
+                <h2 className="font-semibold text-lg">Title 1</h2>
+                <p className="text-sm text-gray-200">
+                  This is a short description for image 1.
+                </p>
+              </div>
+            </div>
+
+            {/* div2 */}
+            <div className="col-start-1 col-end-2 row-start-5 row-end-8 relative bg-gray-300">
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
+                <h2 className="font-semibold text-lg">Title 2</h2>
+                <p className="text-sm text-gray-200">
+                  This is a short description for image 2.
+                </p>
+              </div>
+            </div>
+
+            {/* div3 */}
+            <div className="col-start-2 col-end-3 row-start-1 row-end-3 relative bg-gray-300">
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
+                <h2 className="font-semibold text-lg">Title 3</h2>
+                <p className="text-sm text-gray-200">
+                  This is a short description for image 3.
+                </p>
+              </div>
+            </div>
+
+            {/* div4 */}
+            <div className="col-start-2 col-end-3 row-start-3 row-end-8 relative bg-gray-300">
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
+                <h2 className="font-semibold text-lg">Title 4</h2>
+                <p className="text-sm text-gray-200">
+                  This is a short description for image 4.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* carousel full width */}
+        <div className="w-full bg-white py-12">
+          <MarqueeGallery />
         </div>
       </main>
     </>
