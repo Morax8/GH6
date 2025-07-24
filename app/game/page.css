@@ -1,0 +1,80 @@
+/* Reset style */
+body, html, .game-container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Container utama */
+.game-container {
+  position: relative;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+/* Title */
+.play-title {
+  font-size: 160px;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0 4rem;
+  background: linear-gradient(to left, #F1C946, #e94057, #50AEC3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Kontainer Diamond Cards */
+.diamond-container {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  flex-wrap: wrap;
+}
+
+/* Diamond Card */
+.diamond {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  
+  transform: rotate(45deg); /* Awal rotasi bentuk diamond */
+}
+
+.diamond-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.diamond span {
+  display: block;
+  transform: rotate(-45deg); /* Membalik teks supaya tegak */
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  padding: 0 10px;
+}
+
+.diamond:hover {
+  transform: rotate(45deg) scale(1.05);
+}
+
+
+/* Background unik untuk tiap kotak */
+.diamond:nth-child(1) {
+  background: linear-gradient(135deg, #50AEC3, #D24D50);
+}
+.diamond:nth-child(2) {
+  background: linear-gradient(135deg, #D24D50, #F1C946);
+}
+.diamond:nth-child(3) {
+  background: linear-gradient(135deg, #F1C946, #50AEC3);
+}

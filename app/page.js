@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <main className="relative min-h-screen w-full bg-white text-black overflow-hidden">
         {/* Grid Guides as Background Overlay */}
-        {/* <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <GridGuides />
-        </div> */}
+        </div>
         {/* Navbar */}
         <div className="absolute top-0 left-0 w-full z-[999]">
           <Navbar />
@@ -21,7 +21,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="relative h-screen w-full">
           {/* Pattern Fade */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-50 z-10 px-32">
+          <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-50 z-10">
             <Image
               src="/Assets/patternFade.png"
               alt="Pattern Fade"
@@ -33,18 +33,17 @@ export default function Home() {
           {/* Main Content */}
           <div className="flex h-full w-full">
             {/* Left Side: Text */}
-            <div className="w-1/2 flex flex-col justify-center pl-32 z-10">
+            <div className="w-1/2 flex flex-col justify-center pl-32 z-10 col-span gap">
               <h1 className="text-7xl font-bold mb-4">Lorem Ipsum</h1>
               <p
-                className="mb-2 text-2xl w-[650px]"
+                className="mb-16 text-[24px] w-[500px]"
                 style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 congue lectus eu lacus eleifend, et sodales augue ultrices.
-                Aenean nec quam neque. Class aptent taciti sociosqu ad litora
-                torquent per conubia nostra, per inceptos himenaeos.
+                Aenean nec quam neque.
               </p>
-              <button className="bg-black text-white mt-6 text-2xl px-6 py-3 rounded-full w-60">
+              <button className="bg-black text-white text-2xl px-6 py-3 rounded-full w-60">
                 Button
               </button>
             </div>
@@ -57,6 +56,7 @@ export default function Home() {
                   alt="Full Image"
                   layout="fill"
                   objectFit="cover"
+                  className="mask-b-from-20% mask-b-to-100% "
                 />
               </div>
             </div>
