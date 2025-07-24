@@ -85,7 +85,7 @@ const handleGuessSubmit = (e) => {
 };
 
     const router = useRouter();
-    const [timeLeft, setTimeLeft] = useState(0);
+    const [timeLeft, setTimeLeft] = useState(180);
     const [elapsedTime, setElapsedTime] = useState(0);
     const [currentBuildingIndex, setCurrentBuildingIndex] = useState(0);
   
