@@ -6,6 +6,8 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation';  
 import TimerAngel from "@/app/components/TimerAngel.js";
 import { useState, useEffect } from "react";
+import TryAgainGoBack from "@/app/components/TryAgainGoBack.js";
+
 
 import TimeLeftTimer from "@/app/components/TImeLeftTimer.js";
 
@@ -14,6 +16,8 @@ function formatTime(seconds) {
   const secs = String(seconds % 60).padStart(2, "0");
   return `${mins}:${secs}`;
 }
+
+const links = ['/game/cultureguessr','/game'];
 
 const CulturalBuildings = [
   {
@@ -51,11 +55,39 @@ const CulturalBuildings = [
   }
 ];
 
-export default function Cooking() {
-  const router = useRouter();
+export default function cultureGuessr() {
 
-    const [timeLeft, setTimeLeft] = useState(180); // 3 minutes in seconds
-  const [currentBuildingIndex, setCurrentBuildingIndex] = useState(0);
+const [userGuess, setUserGuess] = useState("");
+const [isCorrect, setIsCorrect] = useState(null); 
+const [correctCount, setCorrectCount] = useState(0);
+
+
+
+const handleGuessSubmit = (e) => {
+  if (e.key === "Enter") {
+    const normalizedGuess = userGuess.trim().toLowerCase();
+    const normalizedAnswer = currentBuilding.location.toLowerCase();
+
+    const guessIsCorrect = normalizedGuess === normalizedAnswer;
+    setIsCorrect(guessIsCorrect);
+
+    if (guessIsCorrect) {
+      setCorrectCount((prev) => prev + 1);
+      setUserGuess(""); // optional: clear input
+      setTimeout(() => {
+        setIsCorrect(null);
+        setCurrentBuildingIndex((prev) => prev + 1); // next question
+        setTimeLeft((prev) => prev+15); 
+        setElapsedTime(0);
+      }, 1000);
+    }
+  }
+};
+
+    const router = useRouter();
+    const [timeLeft, setTimeLeft] = useState(0);
+    const [elapsedTime, setElapsedTime] = useState(0);
+    const [currentBuildingIndex, setCurrentBuildingIndex] = useState(0);
   
   const currentBuilding = CulturalBuildings[currentBuildingIndex];
 
@@ -63,16 +95,17 @@ export default function Cooking() {
     if (timeLeft <= 0) return;
 
     const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
+        setTimeLeft((prev) => prev - 1);
+        setElapsedTime((prev) => prev + 1);
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft]);
+    }, [timeLeft]);
 
   const visibleHints = currentBuilding.hints.filter((_, index) => {
-    if (timeLeft <= 30 && index === 2) return true;
-    if (timeLeft <= 60 && index === 1) return true;
-    if (timeLeft <= 120 && index === 0) return true;
+    if (elapsedTime >= 15 && index === 2) return true;
+    if (elapsedTime >= 30 && index === 1) return true;
+    if (elapsedTime >= 45 && index === 0) return true;
     return false;
   });
 
@@ -87,7 +120,7 @@ export default function Cooking() {
 
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <GridGuides />
+        {/* <GridGuides /> */}
         
           <div className="relative w-full h-full opacity-50">
             <Image
@@ -104,34 +137,91 @@ export default function Cooking() {
             google api streetview placeholder semgttt amoguusss
       </div>
 
-      <div className="flex flex-col gap-8 justify-center items-center min-h-screen col-start-10 col-span-3 bg-red-300">
-        <div className="flex justify-between w-full items-center">
-             
-            <div className="font-bold text-5xl">
+      <div className="flex flex-col gap-8 justify-center items-center h-200 col-start-10 col-span-3">
+        {timeLeft > 0 ? 
+        <div className="flex flex-col h-120 w-full">
+            <div className="flex justify-between w-full items-center mt-8">
+                <div className="font-bold text-5xl">
                 {formatTime(timeLeft)}
-            </div>
-
-            <div className="text-xl"
-            style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-            >
-                Correct : 
-            </div>
-        </div>
-
-        <div className="flex flex-col gap-4 items-start w-full">
-            <div className="font-bold text-3xl">Hints</div>
-
-            <div className="flex flex-col gap-3">
-                {visibleHints.map((hint, i) => (
-                    <div key={i} className="bg-[#EDEDED] py-3 px-8 rounded-full">
-                        {hint}
                     </div>
-                ))}
+
+                    <div className="text-xl"
+                    style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+                    >
+                Correct : {correctCount}
+                </div>
             </div>
 
+            <div className="flex flex-col gap-5 items-start w-full h-100 ">
+                <div className="font-bold text-3xl">Hints</div>
+
+                <div className="flex flex-col gap-3">
+                    {visibleHints.map((hint, i) => (
+                        <div key={i} className="bg-[#EDEDED] py-4 px-8 rounded-full">
+                            {hint}
+                        </div>
+                    ))}
+                </div>
+                
             </div>
         </div>
+        :
+        <div className="flex flex-col  h-120 w-full gap-4">
+            <div className="flex justify-center w-full items-center mt-8">
+                <TryAgainGoBack
+                    links={links}
+                />
+            </div>
+
+            <div className="flex flex-col gap-2 items-center w-full ">
+                <div className="font-bold text-5xl">TIME IS UP!</div>
+                
+                <div className="text-xl"
+                 style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}>
+                    You got {correctCount} correct!
+                </div>
+            </div>
             
+            <div className="flex flex-col gap-2 h-full items-center justify-center w-full -mt-10">
+                <div className="text-bold text-3xl font-bold">
+                    It's from
+                </div>
+
+                <div className="font-bold text-6xl text-center">
+                    {currentBuilding.location}
+                </div>
+            </div>
+        </div>  
+        } 
+
+
+
+    
+
+        <div className="flex flex-col w-full gap-2">
+            <div className="font-semibold text-xl"
+             style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+            >
+                Which Province is it From?
+            </div>
+            <input
+            type="text"
+            placeholder="Your guess"
+            value={userGuess}
+            onChange={(e) => setUserGuess(e.target.value)}
+            onKeyDown={handleGuessSubmit}
+            className={`
+                w-full bg-[#EDEDED] py-3 px-5 rounded-full outline-none border
+                transition-all duration-200
+                ${isCorrect === null ? 'border-transparent' : isCorrect ? 'border-green-500' : 'border-red-500'}
+            `}
+            style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+            />
+        </div>
+
+    </div>
+            
+        
       </div>
 
   );

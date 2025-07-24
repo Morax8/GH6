@@ -35,11 +35,11 @@ export default function Game() {
             <div className="diamond"
               onClick={()=>(router.push('/game/cultureguessr'))}>
               <div className="diamond-content
-              "><span>Where is it from?</span></div>
+              "><span>Where is it From?</span></div>
             </div>
             <div className="diamond"
              onClick={()=>(router.push('/game/cooking'))}>
-              <div className="diamond-content"><span>What's the Dish?</span></div>
+              <div className="diamond-content"><span>How to Cook It?</span></div>
             </div>
             <div className="diamond"
               onClick={()=>(router.push('/game/quiz'))}>

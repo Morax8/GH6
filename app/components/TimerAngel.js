@@ -1,19 +1,21 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function TimerAngel({ timeLeft, setTimeLeft, onComplete = () => {}, className = '' }) {
+export default function TimerAngel({ duration = 10, onComplete = () => {}, className = '' }) {
+  const [secondsLeft, setSecondsLeft] = useState(duration);
+
   useEffect(() => {
-    if (timeLeft <= 0) {
+    if (secondsLeft <= 0) {
       onComplete();
       return;
     }
 
     const timer = setInterval(() => {
-      setTimeLeft(prev => prev - 1);
+      setSecondsLeft((prev) => prev - 1);
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, setTimeLeft, onComplete]);
+  }, [secondsLeft, onComplete]);
 
   const formatTime = (totalSeconds) => {
     const mins = Math.floor(totalSeconds / 60);
@@ -23,7 +25,7 @@ export default function TimerAngel({ timeLeft, setTimeLeft, onComplete = () => {
 
   return (
     <span className={`text-5xl text-black font-bold ${className}`}>
-      {formatTime(timeLeft)}
+    {formatTime(secondsLeft)}
     </span>
   );
 }
