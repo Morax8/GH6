@@ -2,16 +2,46 @@
 import Navbar from "./components/Navbar.js";
 import GridGuides from "./components/GridGuides.js";
 import MarqueeGallery from "./components/Marquee.js";
+import { getDistanceFromLatLonInKm } from "./utils/getDistance.js";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
 export default function Home() {
+  const [distance, setDistance] = useState(null);
+
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const userLat = pos.coords.latitude;
+          const userLon = pos.coords.longitude;
+
+          // Koordinat Candi Borobudur
+          const borobudurLat = -7.6079;
+          const borobudurLon = 110.2038;
+
+          const dist = getDistanceFromLatLonInKm(
+            userLat,
+            userLon,
+            borobudurLat,
+            borobudurLon
+          );
+
+          setDistance(dist.toFixed(1)); // contoh 14.3 km
+        },
+        (err) => {
+          console.error("Lokasi gagal diakses:", err);
+        }
+      );
+    }
+  }, []);
   return (
     <>
       <main className="relative min-h-screen w-full bg-white text-black overflow-hidden">
         {/* Grid Guides as Background Overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <GridGuides />
+          {/* <GridGuides /> */}
         </div>
         {/* Navbar */}
         <div className="absolute top-0 left-0 w-full z-[999]">
@@ -54,9 +84,8 @@ export default function Home() {
                 <Image
                   src="/images/homepage.png"
                   alt="Full Image"
-                  layout="fill"
-                  objectFit="cover"
-                  className="mask-b-from-20% mask-b-to-100% "
+                  fill
+                  className="object-cover mask-b-from-20% mask-b-to-100%"
                 />
               </div>
             </div>
@@ -189,7 +218,7 @@ export default function Home() {
 
             {/* Kanan: text */}
             <div className="flex flex-col justify-center p-8 bg-white">
-              <div className="ml-20">
+              <div className="ml-18">
                 <h1
                   className="text-5xl font-medium mb-4"
                   style={{
@@ -212,7 +241,10 @@ export default function Home() {
                     fontFamily: "var(--montserrat.variable)",
                   }}
                 >
-                  is <span className="font-bold text-[#D24D50]">500 Km</span>{" "}
+                  is{" "}
+                  <span className="font-bold text-[#D24D50]">
+                    {distance ? `${distance} Km ` : "Loading..."}
+                  </span>
                   from where you are
                 </h1>
                 <p
@@ -234,15 +266,6 @@ export default function Home() {
 
         {/* fifth content */}
         <div className="flex h-screen px-10 py-8 gap-10 mx-32">
-          {/* supergraphic */}
-          <div className="absolute inset-0 w-[400px] h-full">
-            <Image
-              src="/Assets/hIMGsupergraphic.png"
-              alt="Supergraphic"
-              fill
-              className="object-cover h-full w-full rotate-90"
-            />
-          </div>
           {/* LEFT SIDE */}
           <div className="flex flex-col justify-center w-[600px]">
             <h1 className="text-4xl font-bold mb-2">Today’s Topic:</h1>
@@ -253,7 +276,6 @@ export default function Home() {
               North <br /> Sumatra
             </h1>
           </div>
-
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-[2.5fr_2fr] grid-rows-7 gap-5 flex-1">
             {/* div1 */}
@@ -298,12 +320,23 @@ export default function Home() {
           </div>
         </div>
 
-        {/* carousel full width */}
-        <div className="w-full bg-white py-12">
-          <MarqueeGallery />
+        <div className="relative w-full py-12">
+          {/* Ini pastiin ada wrapper div buat z-index */}
+          <div className="relative z-20 bg-transparent">
+            <MarqueeGallery />
+          </div>
+
+          {/* Pattern Fade bawah */}
+          <div className="absolute -bottom-[1px] left-0 w-full h-[1000px] z-10 pointer-events-none">
+            <Image
+              src="/Assets/patternFade.png"
+              alt="Pattern Fade"
+              fill
+              className="opacity-50"
+            />
+          </div>
         </div>
       </main>
     </>
   );
 }
-
