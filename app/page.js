@@ -9,7 +9,7 @@ export default function Home() {
       <main className="relative min-h-screen w-full bg-white text-black overflow-hidden">
         {/* Grid Guides as Background Overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <GridGuides />
+          {/* <GridGuides /> */}
         </div>
         {/* Navbar */}
         <div className="absolute top-0 left-0 w-full z-[999]">
