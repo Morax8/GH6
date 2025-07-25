@@ -194,7 +194,9 @@ export default function Home() {
               className="mt-2 text-2xl leading-snug"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
             >
-              BARONG SEWU. Pemerintah Kabupaten Kediri sukses menggelar pertunjukan megah tari kolosal 1000 Barong di Simpang Lima Gumul tahun 2017, sebagai puncak acara Pekan Budaya dan Pariwisata.
+              BARONG SEWU. Pemerintah Kabupaten Kediri sukses menggelar
+              pertunjukan megah tari kolosal 1000 Barong di Simpang Lima Gumul
+              tahun 2017, sebagai puncak acara Pekan Budaya dan Pariwisata.
             </p>
           </div>
         </div>
@@ -214,13 +216,60 @@ export default function Home() {
           <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 mx-32 relative">
             {/* Kiri: grid image placeholder */}
             <div className="grid grid-cols-3 grid-rows-8 gap-5 bg-white z-20">
-              <div className="col-start-1 col-end-2 row-start-1 row-end-2 bg-gray-300"></div>
-              <div className="col-start-1 col-end-2 row-start-2 row-end-6 bg-gray-300"></div>
-              <div className="col-start-1 col-end-2 row-start-6 row-end-8 bg-gray-300"></div>
-              <div className="col-start-2 col-end-3 row-start-1 row-end-5 bg-gray-300"></div>
-              <div className="col-start-2 col-end-3 row-start-5 row-end-9 bg-gray-300"></div>
-              <div className="col-start-3 col-end-4 row-start-1 row-end-3 bg-gray-300"></div>
-              <div className="col-start-3 col-end-4 row-start-3 row-end-7 bg-gray-300"></div>
+              {/* Kolom 1 */}
+              <div className="relative col-start-1 col-end-2 row-start-1 row-end-2">
+                <img
+                  src="/images/BorobudurPotrait1.jpg"
+                  alt="Image 1"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-1 col-end-2 row-start-2 row-end-6">
+                <img
+                  src="/images/BorobudurPotrait2.jpg"
+                  alt="Image 2"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-1 col-end-2 row-start-6 row-end-8">
+                <img
+                  src="/images/BorobudurPotrait3.jpg"
+                  alt="Image 3"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+
+              {/* Kolom 2 */}
+              <div className="relative col-start-2 col-end-3 row-start-1 row-end-5">
+                <img
+                  src="/images/BorobudurPotrait4.jpg"
+                  alt="Image 4"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-2 col-end-3 row-start-5 row-end-9">
+                <img
+                  src="/images/BorobudurPotrait5.jpg"
+                  alt="Image 5"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+
+              {/* Kolom 3 */}
+              <div className="relative col-start-3 col-end-4 row-start-1 row-end-3">
+                <img
+                  src="/images/BorobudurPotrait6.jpg"
+                  alt="Image 6"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-3 col-end-4 row-start-3 row-end-7">
+                <img
+                  src="/images/BorobudurSquare1.jpg"
+                  alt="Image 7"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
             </div>
 
             {/* Kanan: text */}
