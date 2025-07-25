@@ -19,9 +19,15 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "concurrently": "^9.2.0",
     "daisyui": "^5.0.46",
     "eslint": "^9",
     "eslint-config-next": "15.4.3",
     "tailwindcss": "^4.1.11"
-  }
+  },
+  "scripts": {
+  "dev": "concurrently \"npm run next\" \"npm run flask\"",
+  "next": "next dev",
+  "flask": "cd model && set FLASK_APP=app.py && set FLASK_ENV=development && flask run"
+}
 }

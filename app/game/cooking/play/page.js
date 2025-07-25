@@ -1,150 +1,213 @@
-'use client'
+'use client';
 
 import Navbar from "../../../components/Navbar.js";
 import GridGuides from "../../../components/GridGuides.js";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';  
+import { useRouter, useSearchParams } from 'next/navigation';
 import '../cooking.css';
-import TimerAngel from "@/app/components/TimerAngel.js";
 import ChoiceGrid from "@/app/components/choiceGrid.js";
-import { useState } from "react";
 import TryAgainGoBack from "@/app/components/TryAgainGoBack.js";
+import { useState, useEffect } from "react";
 
-const QUESTIONS = [
-{
-    question: "What should we add next after _____?",
-    choices: ["Sugar", "Salt", "Water", "Ice"],
-    correctIndex: 2
-},
-{
-    question: "Which ingredient makes it sweet?",
-    choices: ["Vinegar", "Lime", "Sugar", "Soy Sauce"],
-    correctIndex: 2
-},
-{
-    question: "Which ingredient makes it sweet?",
-    choices: ["Vinegar", "Lime", "Sugar", "Soy Sauce"],
-    correctIndex: 2
-}
+const dishes = [
+  "Rendang", "Nasi Goreng", "Sate Ayam", "Bakso", "Soto Ayam",
+  "Gado-Gado", "Pempek", "Ayam Penyet", "Gudeg", "Tahu Gejrot"
 ];
 
-const links =[
-    "/game/cooking",
-    "/game"
-]
+const links = ["/game/cooking", "/game"];
 
-export default function Cooking() {
-    const [feedback, setFeedback] = useState("Hmm...");
-    const [questionIndex, setQuestionIndex] = useState(0);
-    const [selectedIndex, setSelectedIndex] = useState(null);
-    const [isLocked, setIsLocked] = useState(false);
-    const [correctCount, setCorrectCount] = useState(0);
+export default function CookingQnA() {
+  const [ingredients, setIngredients] = useState([]);
+  const [questions, setQuestions] = useState([]);
+  const [feedback, setFeedback] = useState("Hmm...");
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isLocked, setIsLocked] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [dish, setDish] = useState("");
+  const storageKey = "cooking_recipe";
 
-  
-  const current = QUESTIONS[questionIndex];
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-    const handleChoiceClick = (choice, index) => {
-        if (isLocked) return;
-
-        setSelectedIndex(index);
-        setIsLocked(true);
-
-        const isCorrect = index === current.correctIndex;
-
-        if (isCorrect) {
-            setFeedback("Correct!");
-            const nextCorrectCount = correctCount + 1;
-            setCorrectCount(nextCorrectCount);
-
-            setTimeout(() => {
-            if (nextCorrectCount >= 3) {
-                router.push("/game/cooking/win"); // Change this path to your actual win screen
-            } else {
-                setQuestionIndex(prev => prev + 1);
-                setSelectedIndex(null);
-                setIsLocked(false);
-                setFeedback("Hmm...");
+  useEffect(() => {
+    const fetchIngredients = async () => {
+      let selectedDish = "";
+      // Try to get from localStorage first
+      if (typeof window !== 'undefined') {
+        const stored = localStorage.getItem(storageKey);
+        if (stored) {
+          try {
+            const data = JSON.parse(stored);
+            if (data.dish) {
+              selectedDish = data.dish;
             }
-            }, 2000);
-        } else {
-            setFeedback("Wrong!");
-            // Do not increment correctCount
+          } catch (e) {
+            localStorage.removeItem(storageKey);
+          }
         }
+      }
+      // If not in localStorage, use query param or random
+      if (!selectedDish) {
+        const paramDish = searchParams.get('dish');
+        selectedDish = paramDish || dishes[Math.floor(Math.random() * dishes.length)];
+      }
+      setDish(selectedDish);
+
+      try {
+        const res = await fetch(`http://localhost:5000/ingredients?dish=${encodeURIComponent(selectedDish)}`);
+        const data = await res.json();
+
+        if (!Array.isArray(data.ingredients) || data.ingredients.length < 4) {
+          throw new Error("Insufficient or invalid ingredients.");
+        }
+
+        // Fetch false ingredients from backend
+        const falseRes = await fetch(`http://localhost:5000/false_ingredients?dish=${encodeURIComponent(selectedDish)}&n=3`);
+        const falseData = await falseRes.json();
+        console.log('False ingredients from backend:', falseData);
+        const falseIngredients = Array.isArray(falseData.false_ingredients) ? falseData.false_ingredients : [];
+
+        setIngredients(data.ingredients);
+        generateQuestions(data.ingredients, falseIngredients);
+        setLoading(false);
+      } catch (err) {
+        console.error("Failed to fetch ingredients:", err);
+      }
     };
 
+    const generateQuestions = (ingredientList, falseIngredients) => {
+      const used = new Set();
+      const questions = [];
 
-    const router = useRouter();
+      for (let i = 0; i < 3; i++) {
+        let correct = null;
+        for (let attempt = 0; attempt < 10; attempt++) {
+          const candidate = ingredientList[Math.floor(Math.random() * ingredientList.length)];
+          if (!used.has(candidate)) {
+            correct = candidate;
+            used.add(candidate);
+            break;
+          }
+        }
+
+        if (!correct) continue;
+
+        // Ensure false ingredients are unique and not the correct answer
+        const filteredFalse = falseIngredients.filter(item => item !== correct && !ingredientList.includes(item));
+        // If not enough, fill with generic lowercase distractors
+        let distractors = filteredFalse.slice(0, 3);
+        while (distractors.length < 3) {
+          const filler = `ingredient ${distractors.length + 1}`;
+          if (!distractors.includes(filler) && filler !== correct) {
+            distractors.push(filler);
+          }
+        }
+
+        // Combine and shuffle
+        const allChoices = [...distractors, correct].sort(() => 0.5 - Math.random());
+
+        questions.push({
+          question: `Which of the following is an ingredient in ${dish}?`,
+          choices: allChoices,
+          correctIndex: allChoices.indexOf(correct)
+        });
+      }
+
+      setQuestions(questions);
+    };
+
+    fetchIngredients();
+  }, []);
+
+  const current = questions[questionIndex];
+
+  const handleChoiceClick = (choice, index) => {
+    if (isLocked || !current) return;
+
+    setSelectedIndex(index);
+    setIsLocked(true);
+
+    const isCorrect = index === current.correctIndex;
+
+    if (isCorrect) {
+      setFeedback("Correct!");
+      const nextCorrectCount = correctCount + 1;
+      setCorrectCount(nextCorrectCount);
+
+      setTimeout(() => {
+        if (nextCorrectCount >= 3) {
+          router.push("/game/cooking/win");
+        } else {
+          setQuestionIndex(prev => prev + 1);
+          setSelectedIndex(null);
+          setIsLocked(false);
+          setFeedback("Hmm...");
+        }
+      }, 2000);
+    } else {
+      setFeedback("Wrong!");
+    }
+  };
 
   return (
-    <div className="relative h-screen w-full bg-white text-black overflow-hidden grid grid-cols-12 px-32 gap-5 overflow-hidden overflow-none">
-
-      {/* Navbar */}
+    <div className="relative h-screen w-full bg-white text-black grid grid-cols-12 px-32 gap-5">
       <div className="absolute top-0 left-0 w-full z-[999]">
         <Navbar />
       </div>
 
-      {/* Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <GridGuides />
-        
-          <div className="relative w-full h-full opacity-50">
-            <Image
-              src="/Assets/patternFade.png"
-              alt="Pattern Fade"
-              fill
-              className="object-cover rotate-180 opacity-50"
-            />
-          </div>
-        
+        <div className="relative w-full h-full opacity-50">
+          <Image
+            src="/Assets/patternFade.png"
+            alt="Pattern Fade"
+            fill
+            className="object-cover rotate-180 opacity-50"
+          />
+        </div>
       </div>
 
       <div className="flex flex-col min-h-screen col-span-12">
-
-        {/* Top Section (content height only) */}
         <div className="col-span-12 z-10 text-4xl font-black py-20">
-            <div className="absolute top-33 flex flex-col gap-1">
-
-    
-            </div>
-
-            {feedback === "Wrong!" ?
+          {feedback === "Wrong!" && (
             <div className="absolute inset-0 flex top-32 justify-center z-50">
-                <TryAgainGoBack
-                    links = {links}
-                />
+              <TryAgainGoBack links={links} />
             </div>
-            
-            : <></>}
+          )}
 
-            <div className="flex flex-col gap-12 justify-center w-full items-center mt-12 animate-fade-in mt-20">
-                <div className="font-bold text-7xl fade-in delay-1">
-                 {feedback}
-                </div>
-
-                <div className="font-medium text-4xl h-6  fade-in delay-2 mb-12"
-                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+          {loading || !current ? (
+            <div className="flex flex-col items-center justify-center mt-32 text-3xl font-medium">
+              Loading quiz...
+            </div>
+          ) : (
+            <>
+              <div className="flex flex-col gap-12 justify-center w-full items-center mt-12 animate-fade-in">
+                <div className="font-bold text-7xl fade-in delay-1">{feedback}</div>
+                <div
+                  className="font-medium text-4xl h-6 fade-in delay-2 mb-12"
+                  style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
                 >
-                {current.question}
-                </div> 
-            </div>
+                  {current.question}
+                </div>
+              </div>
 
-            <ChoiceGrid
-            choices={current.choices}
-            onChoiceClick={handleChoiceClick}
-            selectedIndex={selectedIndex}
-            correctIndex={current.correctIndex}
-            isLocked={isLocked}
-            />
-
-            <div>
-
-            </div>
+              <ChoiceGrid
+                choices={current.choices}
+                onChoiceClick={handleChoiceClick}
+                selectedIndex={selectedIndex}
+                correctIndex={current.correctIndex}
+                isLocked={isLocked}
+              />
+            </>
+          )}
         </div>
       </div>
-      
-        <Image
+
+      <Image
         src={
-            feedback === "Wrong!"
+          feedback === "Wrong!"
             ? "/Assets/answerWrongCooking.png"
             : "/Assets/answerCorrectDefaultCooking.png"
         }
@@ -154,7 +217,7 @@ export default function Cooking() {
         sizes="100vw"
         className="w-[560px] h-auto absolute left-1/2 bottom-0 translate-x-[-50%]"
         style={{ objectFit: "contain" }}
-        />
+      />
     </div>
   );
 }
