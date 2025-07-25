@@ -104,9 +104,9 @@ export default function Home() {
               className="w-full object-cover h-[350px]"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Barongan </h3>
+              <h3 className="text-lg font-semibold">Barong Sewu</h3>
               <p className="text-sm">
-                The Magical Art Uniting Javanese Souls!
+                5 Fakta Seru Tari 1000 Barong Kediri yang Bikin Kamu Kagum!
               </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
@@ -120,9 +120,10 @@ export default function Home() {
             />
 
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Dayak Traditional Attire</h3>
+              <h3 className="text-lg font-semibold">Busana dari Dayak</h3>
               <p className="text-sm">
-               More Than Just Clothing, reflects social status and cultural heritage.
+                5 Hal Unik yang harus kamu tahu dari Pakaian Adat Kalimantan
+                Barat Khas Suku Dayak
               </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
@@ -137,7 +138,7 @@ export default function Home() {
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">Galungan</h3>
               <p className="text-sm">
-                Celebrating the Victory of Dharma in Bali
+                Perayaan Kemenangan Kebenaran ala Bali & Tengger
               </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
@@ -151,7 +152,7 @@ export default function Home() {
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">Tenun Desa Sade</h3>
-              <p className="text-sm">The Heaven of Sasak Weaving in Lombok!</p>
+              <p className="text-sm">Surganya Kain Tenun Sasak di Lombok!</p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -165,7 +166,7 @@ export default function Home() {
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">Peresean</h3>
               <p className="text-sm">
-                 Lombok’s Unique Combat Tradition!
+                Seni Tari Pertarungan Khas Sasak yang Seru!
               </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
@@ -193,7 +194,9 @@ export default function Home() {
               className="mt-2 text-2xl leading-snug"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
             >
-              BARONG SEWU. In 2017, the Kediri Regency Government successfully held a magnificent mass performance of 1000 Barong dance at Simpang Lima Gumul, as the grand finale of the Cultural and Tourism Week.
+              BARONG SEWU. Pemerintah Kabupaten Kediri sukses menggelar
+              pertunjukan megah tari kolosal 1000 Barong di Simpang Lima Gumul
+              tahun 2017, sebagai puncak acara Pekan Budaya dan Pariwisata.
             </p>
           </div>
         </div>
@@ -304,7 +307,9 @@ export default function Home() {
                   className="mt-2 text-2xl leading-snug mb-10"
                   style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
                 >
-                  This largest Buddhist temple lay buried for ten centuries before being restored by UNESCO. The magnificent 9th-century masterpiece features 504 stupas and the world's longest series of 2,672 Buddhist reliefs.
+                  Candi Buddha terbesar ini sempat terkubur 10 abad sebelum
+                  dipugar UNESCO, mahakarya abad ke-9 yang memukau dengan 504
+                  stupa dan 2.672 relief Buddha terpanjang di dunia.
                 </p>
                 <button className="bg-black text-white mt-6 text-2xl px-6 py-3 rounded-full w-60">
                   Learn More
@@ -341,7 +346,10 @@ export default function Home() {
                   Tortor & Gondang Sabangunan
                 </h2>
                 <p className="text-sm text-gray-200">
-                  You'll be mesmerized by the magical movements of Tortor dance, accompanied by the haunting melodies of gondang music. Every meaningful gesture is more than just dance—it's a living prayer for the Batak people!
+                  Kamu akan terpukau menyaksikan gerakan magis tari Tortor
+                  diiringi alunan gondang. Setiap gerakan penuh makna ini bukan
+                  sekadar tarian, melainkan doa yang hidup bagi masyarakat
+                  Batak!
                 </p>
               </div>
             </div>
@@ -355,10 +363,10 @@ export default function Home() {
                 className="object-cover"
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                <h2 className="font-semibold text-lg">Ruma Bolon</h2>
+                <h2 className="font-semibold text-lg">Rumah Bolon</h2>
                 <p className="text-sm text-gray-200">
-                  Discover the Unique Architecture of Batak Traditional Houses
-                  Featuring boat-shaped structures, curved roofs, and vibrant ornamental designs.
+                  Mengenal Rumah adat Batak dengan arsitektur unik berbentuk
+                  perahu, atap melengkung, dan ornamen warna-warni.
                 </p>
               </div>
             </div>
@@ -374,7 +382,9 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">Mangokal Holi</h2>
                 <p className="text-sm text-gray-200">
-                  You might not believe it, but this is the highest form of respect—recovering ancestors' bones to give them a more dignified resting place. A cultural heritage rich in meaning!
+                  Kamu mungkin tak percaya, tapi inilah bentuk penghormatan
+                  tertinggi - menggali kembali tulang leluhur untuk diberikan
+                  tempat lebih layak. Sebuah warisan budaya yang penuh makna!
                 </p>
               </div>
             </div>
@@ -389,10 +399,12 @@ export default function Home() {
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">
-                  Ulos: A Cloth of a Thousand Meanings
+                  Ulos: Kain dengan Seribu Makna
                 </h2>
                 <p className="text-sm text-gray-200">
-                  Know that every thread of ulos carries prayers and blessings. Its beautiful patterns are in fact a secret ancestral language of the Batak people.
+                  Ketahui setiap helai ulos mengandung doa dan berkat.
+                  Motif-motifnya yang indah ternyata adalah "bahasa rahasia"
+                  warisan leluhur Batak.
                 </p>
               </div>
             </div>
