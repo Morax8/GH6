@@ -157,7 +157,7 @@ export default function CultureGuessr() {
       {/* Street View Container */}
       <div className="flex flex-col gap-8 justify-center items-center min-h-screen col-start-1 col-span-8 bg-white -ml-32">
         <div className="text-2xl font-bold">Where is this?</div>
-        <div className="w-[600px] h-[400px] rounded-lg overflow-hidden shadow-lg border-4 border-orange-500">
+        <div className="w-[1230px] h-screen rounded-lg overflow-hidden shadow-lg border-4 border-orange-500">
           <div ref={panoramaRef} className="w-full h-full" />
         </div>
       </div>
