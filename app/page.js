@@ -194,9 +194,7 @@ export default function Home() {
               className="mt-2 text-2xl leading-snug"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              aliquet laoreet dolor, eget consectetur orci tempus vel. Quisque
-              ut dui nec ipsum tristique convallis non sit amet sapien.
+              BARONG SEWU. Pemerintah Kabupaten Kediri sukses menggelar pertunjukan megah tari kolosal 1000 Barong di Simpang Lima Gumul tahun 2017, sebagai puncak acara Pekan Budaya dan Pariwisata.
             </p>
           </div>
         </div>
