@@ -1,3 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes jumpy {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  .letter-bounce {
+    display: inline-block;
+    animation: jumpy 0.6s infinite;
+  }
+}
+
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
