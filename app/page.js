@@ -75,9 +75,11 @@ export default function Home() {
                 Explore culture, history, and traditions through digital
                 platform & engaging game-based learning.
               </p>
-              <button className="bg-black text-white text-2xl px-6 py-3 rounded-full w-60">
-                Button
-              </button>
+              <Link href="/explorePage">
+                <button className="bg-black text-white text-2xl px-6 py-3 rounded-full w-60 cursor-pointer">
+                  Let's Explore
+                </button>
+              </Link>
             </div>
 
             {/* Right Side: Full Image */}

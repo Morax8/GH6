@@ -9,9 +9,14 @@ export default function Navbar() {
   return (
     <nav className="w-full px-32 py-4 flex justify-between items-center bg-white shadow text-black">
       <div className="text-lg font-bold">
-        <img src="/Assets/logo.svg" alt="Logo" className="w-20" />
+        <img
+          src="/Assets/logo.svg"
+          alt="Logo"
+          className="w-20 cursor-pointer"
+          onClick={() => router.push("/")}
+        />
       </div>
-      <ul className="flex space-x-8 text-sm font-medium">
+      <ul className="flex space-x-8 text-md font-medium ">
         <li
           className="font-bold font hover:text-gray-700 cursor-pointer"
           onClick={() => router.push("/")}
