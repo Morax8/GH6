@@ -43,6 +43,7 @@ export default function CookingQnA() {
             if (data.dish) {
               selectedDish = data.dish;
             }
+
           } catch (e) {
             localStorage.removeItem(storageKey);
           }
@@ -61,6 +62,7 @@ export default function CookingQnA() {
 
         if (!Array.isArray(data.ingredients) || data.ingredients.length < 4) {
           throw new Error("Insufficient or invalid ingredients.");
+
         }
 
         // Fetch false ingredients from backend
@@ -158,6 +160,7 @@ export default function CookingQnA() {
       </div>
 
       <div className="absolute inset-0 z-0 pointer-events-none">
+
         <GridGuides />
         <div className="relative w-full h-full opacity-50">
           <Image
@@ -167,6 +170,7 @@ export default function CookingQnA() {
             className="object-cover rotate-180 opacity-50"
           />
         </div>
+
       </div>
 
       <div className="flex flex-col min-h-screen col-span-12">
@@ -175,7 +179,9 @@ export default function CookingQnA() {
             <div className="absolute inset-0 flex top-32 justify-center z-50">
               <TryAgainGoBack links={links} />
             </div>
+
           )}
+
 
           {loading || !current ? (
             <div className="flex flex-col items-center justify-center mt-32 text-3xl font-medium">

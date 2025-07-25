@@ -17,7 +17,7 @@ export default function Cooking() {
 
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <GridGuides />
+        
         
           <div className="relative w-full h-full opacity-50">
             <Image
@@ -43,7 +43,7 @@ export default function Cooking() {
         </div>
 
           <button className="bg-black text-white text-2xl px-6 py-3 rounded-full w-60 pointer-auto cursor-pointer"
-            onClick={()=>{router.push('/game/cooking/recipe')}}
+            onClick={()=>{router.push('/game/quiz/play')}}
           >
               Let's test!
           </button>

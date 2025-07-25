@@ -77,6 +77,7 @@ export default function Cooking() {
 
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
+
         <GridGuides />
         <div className="relative w-full h-full opacity-50">
           <Image
@@ -86,6 +87,7 @@ export default function Cooking() {
             className="object-cover rotate-180 opacity-50"
           />
         </div>
+
       </div>
 
       <div className="flex flex-col min-h-screen col-span-12">

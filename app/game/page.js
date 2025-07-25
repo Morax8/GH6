@@ -17,8 +17,8 @@ export default function Game() {
       
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <GridGuides />
-          <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-50 z-10 px-32">
+        
+          <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-50 -z-0 px-32">
                     <Image
                       src="/Assets/patternFade.png"
                       alt="Pattern Fade"
@@ -30,16 +30,16 @@ export default function Game() {
       </div>
 
       <main className="game-content ">
-        <h1 className="play-title">PLAY!</h1>
+        <h1 className="play-title z-10">PLAY!</h1>
           <div className="diamond-container">
             <div className="diamond"
               onClick={()=>(router.push('/game/cultureguessr'))}>
               <div className="diamond-content
-              "><span>Where is it from?</span></div>
+              "><span>Where is it From?</span></div>
             </div>
             <div className="diamond"
              onClick={()=>(router.push('/game/cooking'))}>
-              <div className="diamond-content"><span>What's the Dish?</span></div>
+              <div className="diamond-content"><span>How to Cook It?</span></div>
             </div>
             <div className="diamond"
               onClick={()=>(router.push('/game/quiz'))}>
