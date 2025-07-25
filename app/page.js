@@ -4,6 +4,7 @@ import GridGuides from "./components/GridGuides.js";
 import MarqueeGallery from "./components/Marquee.js";
 import { getDistanceFromLatLonInKm } from "./utils/getDistance.js";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 import Image from "next/image";
 
@@ -194,11 +195,13 @@ export default function Home() {
           />
 
           {/* Overlay Black Transparent */}
+
           <div className="absolute inset-0 bg-black/20 z-0" />
 
           {/* Text Overlay */}
           <div className="absolute bottom-20 left-15 text-white max-w-md z-2">
             <h1 className="text-8xl font-bold leading-tight ">
+
               Today’s <br /> Cultural <br /> Experience
             </h1>
             <p
@@ -215,6 +218,7 @@ export default function Home() {
         {/* fourth content */}
         <section className=" relative">
           {/* Pattern Fade */}
+
           <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-50 px-32">
             <Image
               src="/Assets/patternFade.png"
@@ -284,6 +288,7 @@ export default function Home() {
             </div>
 
             {/* Kanan: text */}
+
             <div className="flex flex-col justify-center p-8">
               <div className="ml-18">
                 <h1
@@ -322,9 +327,12 @@ export default function Home() {
                   dipugar UNESCO, mahakarya abad ke-9 yang memukau dengan 504
                   stupa dan 2.672 relief Buddha terpanjang di dunia.
                 </p>
-                <button className="bg-black text-white mt-6 text-2xl px-6 py-3 rounded-full w-60">
-                  Learn More
-                </button>
+
+                <Link href="/borobudur-temple">
+                  <button className="bg-black text-white mt-6 text-2xl px-6 py-3 rounded-full w-60 cursor-pointer z-30">
+                    Explore
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

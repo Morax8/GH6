@@ -76,6 +76,7 @@ export default function explorePage(){
             <div className="relative flex flex-col justify-center items-center col-span-12 gap-8 font-semibold h-screen px-32">
                 <div className="text-5xl text-black z-2">
                     Categories
+
                 </div>
 
                 <div className='relative h-65 w-full'>
