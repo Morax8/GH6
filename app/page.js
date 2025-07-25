@@ -204,7 +204,7 @@ export default function Home() {
         {/* fourth content */}
         <section className=" relative">
           {/* Pattern Fade */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-50 z-10 px-32">
+          <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent opacity-50 px-32">
             <Image
               src="/Assets/patternFade.png"
               alt="Pattern Fade"
@@ -273,7 +273,7 @@ export default function Home() {
             </div>
 
             {/* Kanan: text */}
-            <div className="flex flex-col justify-center p-8 bg-white">
+            <div className="flex flex-col justify-center p-8">
               <div className="ml-18">
                 <h1
                   className="text-5xl font-medium mb-4"
