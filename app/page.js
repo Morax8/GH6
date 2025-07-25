@@ -104,8 +104,10 @@ export default function Home() {
               className="w-full object-cover h-[350px]"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Judul 1</h3>
-              <p className="text-sm">Deskripsi 1</p>
+              <h3 className="text-lg font-semibold">Barong Sewu</h3>
+              <p className="text-sm">
+                5 Fakta Seru Tari 1000 Barong Kediri yang Bikin Kamu Kagum!
+              </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -118,8 +120,11 @@ export default function Home() {
             />
 
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Judul 2</h3>
-              <p className="text-sm">Deskripsi 2</p>
+              <h3 className="text-lg font-semibold">Busana dari Dayak</h3>
+              <p className="text-sm">
+                5 Hal Unik yang harus kamu tahu dari Pakaian Adat Kalimantan
+                Barat Khas Suku Dayak
+              </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -131,8 +136,10 @@ export default function Home() {
               className="w-full object-cover h-[700px]"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Judul 3</h3>
-              <p className="text-sm">Deskripsi 3</p>
+              <h3 className="text-lg font-semibold">Galungan</h3>
+              <p className="text-sm">
+                Perayaan Kemenangan Kebenaran ala Bali & Tengger
+              </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -144,8 +151,8 @@ export default function Home() {
               className="w-full object-cover h-[350px]"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Judul 4</h3>
-              <p className="text-sm">Deskripsi 4</p>
+              <h3 className="text-lg font-semibold">Tenun Desa Sade</h3>
+              <p className="text-sm">Surganya Kain Tenun Sasak di Lombok!</p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -157,8 +164,10 @@ export default function Home() {
               className="w-full object-cover h-[350px]"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Judul 5</h3>
-              <p className="text-sm">Deskripsi 5</p>
+              <h3 className="text-lg font-semibold">Peresean</h3>
+              <p className="text-sm">
+                Seni Tari Pertarungan Khas Sasak yang Seru!
+              </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -185,9 +194,9 @@ export default function Home() {
               className="mt-2 text-2xl leading-snug"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              aliquet laoreet dolor, eget consectetur orci tempus vel. Quisque
-              ut dui nec ipsum tristique convallis non sit amet sapien.
+              BARONG SEWU. Pemerintah Kabupaten Kediri sukses menggelar
+              pertunjukan megah tari kolosal 1000 Barong di Simpang Lima Gumul
+              tahun 2017, sebagai puncak acara Pekan Budaya dan Pariwisata.
             </p>
           </div>
         </div>
@@ -207,13 +216,60 @@ export default function Home() {
           <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 mx-32 relative">
             {/* Kiri: grid image placeholder */}
             <div className="grid grid-cols-3 grid-rows-8 gap-5 bg-white z-20">
-              <div className="col-start-1 col-end-2 row-start-1 row-end-2 bg-gray-300"></div>
-              <div className="col-start-1 col-end-2 row-start-2 row-end-6 bg-gray-300"></div>
-              <div className="col-start-1 col-end-2 row-start-6 row-end-8 bg-gray-300"></div>
-              <div className="col-start-2 col-end-3 row-start-1 row-end-5 bg-gray-300"></div>
-              <div className="col-start-2 col-end-3 row-start-5 row-end-9 bg-gray-300"></div>
-              <div className="col-start-3 col-end-4 row-start-1 row-end-3 bg-gray-300"></div>
-              <div className="col-start-3 col-end-4 row-start-3 row-end-7 bg-gray-300"></div>
+              {/* Kolom 1 */}
+              <div className="relative col-start-1 col-end-2 row-start-1 row-end-2">
+                <img
+                  src="/images/BorobudurPotrait1.jpg"
+                  alt="Image 1"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-1 col-end-2 row-start-2 row-end-6">
+                <img
+                  src="/images/BorobudurPotrait2.jpg"
+                  alt="Image 2"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-1 col-end-2 row-start-6 row-end-8">
+                <img
+                  src="/images/BorobudurPotrait3.jpg"
+                  alt="Image 3"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+
+              {/* Kolom 2 */}
+              <div className="relative col-start-2 col-end-3 row-start-1 row-end-5">
+                <img
+                  src="/images/BorobudurPotrait4.jpg"
+                  alt="Image 4"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-2 col-end-3 row-start-5 row-end-9">
+                <img
+                  src="/images/BorobudurPotrait5.jpg"
+                  alt="Image 5"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+
+              {/* Kolom 3 */}
+              <div className="relative col-start-3 col-end-4 row-start-1 row-end-3">
+                <img
+                  src="/images/BorobudurPotrait6.jpg"
+                  alt="Image 6"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
+              <div className="relative col-start-3 col-end-4 row-start-3 row-end-7">
+                <img
+                  src="/images/BorobudurSquare1.jpg"
+                  alt="Image 7"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </div>
             </div>
 
             {/* Kanan: text */}
@@ -251,10 +307,9 @@ export default function Home() {
                   className="mt-2 text-2xl leading-snug mb-10"
                   style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                  aliquet laoreet dolor, eget consectetur orci tempus vel.
-                  Quisque ut dui nec ipsum tristique convallis non sit amet
-                  sapien.
+                  Candi Buddha terbesar ini sempat terkubur 10 abad sebelum
+                  dipugar UNESCO, mahakarya abad ke-9 yang memukau dengan 504
+                  stupa dan 2.672 relief Buddha terpanjang di dunia.
                 </p>
                 <button className="bg-black text-white mt-6 text-2xl px-6 py-3 rounded-full w-60">
                   Learn More
@@ -279,41 +334,77 @@ export default function Home() {
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-[2.5fr_2fr] grid-rows-7 gap-5 flex-1">
             {/* div1 */}
-            <div className="col-start-1 col-end-2 row-start-1 row-end-5 relative bg-gray-300">
+            <div className="col-start-1 col-end-2 row-start-1 row-end-5 relative overflow-hidden rounded-md">
+              <Image
+                src="/images/Tortor.jpg"
+                alt="Tari Tortor"
+                fill
+                className="object-cover"
+              />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                <h2 className="font-semibold text-lg">Title 1</h2>
+                <h2 className="font-semibold text-lg">
+                  Tortor & Gondang Sabangunan
+                </h2>
                 <p className="text-sm text-gray-200">
-                  This is a short description for image 1.
+                  Kamu akan terpukau menyaksikan gerakan magis tari Tortor
+                  diiringi alunan gondang. Setiap gerakan penuh makna ini bukan
+                  sekadar tarian, melainkan doa yang hidup bagi masyarakat
+                  Batak!
                 </p>
               </div>
             </div>
 
             {/* div2 */}
-            <div className="col-start-1 col-end-2 row-start-5 row-end-8 relative bg-gray-300">
+            <div className="col-start-1 col-end-2 row-start-5 row-end-8 relative overflow-hidden rounded-md">
+              <Image
+                src="/images/RumahBolon.jpg"
+                alt="Rumah Bolon"
+                fill
+                className="object-cover"
+              />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                <h2 className="font-semibold text-lg">Title 2</h2>
+                <h2 className="font-semibold text-lg">Rumah Bolon</h2>
                 <p className="text-sm text-gray-200">
-                  This is a short description for image 2.
+                  Mengenal Rumah adat Batak dengan arsitektur unik berbentuk
+                  perahu, atap melengkung, dan ornamen warna-warni.
                 </p>
               </div>
             </div>
 
             {/* div3 */}
-            <div className="col-start-2 col-end-3 row-start-1 row-end-3 relative bg-gray-300">
+            <div className="col-start-2 col-end-3 row-start-1 row-end-3 relative overflow-hidden rounded-md">
+              <Image
+                src="/images/MangokalHoli.jpg"
+                alt="Mangokal Holi"
+                fill
+                className="object-cover"
+              />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                <h2 className="font-semibold text-lg">Title 3</h2>
+                <h2 className="font-semibold text-lg">Mangokal Holi</h2>
                 <p className="text-sm text-gray-200">
-                  This is a short description for image 3.
+                  Kamu mungkin tak percaya, tapi inilah bentuk penghormatan
+                  tertinggi - menggali kembali tulang leluhur untuk diberikan
+                  tempat lebih layak. Sebuah warisan budaya yang penuh makna!
                 </p>
               </div>
             </div>
 
             {/* div4 */}
-            <div className="col-start-2 col-end-3 row-start-3 row-end-8 relative bg-gray-300">
+            <div className="col-start-2 col-end-3 row-start-3 row-end-8 relative overflow-hidden rounded-md">
+              <Image
+                src="/images/ulos.jpg"
+                alt="Ulos"
+                fill
+                className="object-cover"
+              />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
-                <h2 className="font-semibold text-lg">Title 4</h2>
+                <h2 className="font-semibold text-lg">
+                  Ulos: Kain dengan Seribu Makna
+                </h2>
                 <p className="text-sm text-gray-200">
-                  This is a short description for image 4.
+                  Ketahui setiap helai ulos mengandung doa dan berkat.
+                  Motif-motifnya yang indah ternyata adalah "bahasa rahasia"
+                  warisan leluhur Batak.
                 </p>
               </div>
             </div>

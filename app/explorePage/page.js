@@ -37,7 +37,7 @@ export default function explorePage(){
         } else if(index<0){
             index = 4-1;
         }
-        carouselRef.current.scrollTo({ left: 280*index, behavior: 'smooth' });
+        carouselRef.current.scrollTo({ left: 304*index, behavior: 'smooth' });
         }
     };
 
