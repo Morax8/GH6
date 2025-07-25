@@ -12,7 +12,7 @@ const MarqueeGallery = () => {
         {cardData.map((card, index) => (
           <div
             key={card.id}
-            className="relative w-[395px] h-[550px] mx-4 flex-shrink-0 rounded-xl overflow-hidden shadow-lg"
+            className="relative w-[395px] h-[550px] mx-4 flex-shrink-0 rounded-xl overflow-hidden shadow-lg  cursor-pointer"
             style={{
               backgroundImage: `url(${card.image})`,
               backgroundSize: "cover",

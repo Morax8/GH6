@@ -98,10 +98,10 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-7 grid-rows-5 gap-4 w-full max-w-screen-xl mx-auto">
           {/* div1: 2 kolom × 2 baris */}
-          <div className="col-start-1 col-end-3 row-start-1 row-end-3 relative">
+          <div className="col-start-1 col-end-3 row-start-1 row-end-3 relative group overflow-hidden cursor-pointer">
             <img
               src="/images/reog.png"
-              className="w-full object-cover h-[350px]"
+              className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">Barong Sewu</h3>
@@ -113,13 +113,13 @@ export default function Home() {
           </div>
 
           {/* div2: 3 kolom × 2 baris */}
-          <div className="col-start-3 col-end-6 row-start-1 row-end-3 relative">
+          <div className="col-start-3 col-end-6 row-start-1 row-end-3 relative group overflow-hidden">
             <img
               src="/images/bajuAdat.png"
-              className="w-full object-cover object-[center_25%] h-[350px]"
+              className="w-full object-cover object-[center_25%] h-[350px] transition-transform duration-300 ease-in-out group-hover:scale-105 "
             />
 
-            <div className="absolute bottom-4 left-4 text-white z-10">
+            <div className="absolute bottom-4 left-4 text-white z-10 group overflow-hidden cursor-pointer">
               <h3 className="text-lg font-semibold">Busana dari Dayak</h3>
               <p className="text-sm">
                 5 Hal Unik yang harus kamu tahu dari Pakaian Adat Kalimantan
@@ -130,10 +130,10 @@ export default function Home() {
           </div>
 
           {/* div3: 2 kolom × 4 baris (tinggi jadi 2x) */}
-          <div className="col-start-6 col-end-8 row-start-1 row-end-5 relative">
+          <div className="col-start-6 col-end-8 row-start-1 row-end-5 relative group overflow-hidden">
             <img
               src="/images/bali.png"
-              className="w-full object-cover h-[700px]"
+              className="w-full object-cover h-[700px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">Galungan</h3>
@@ -145,10 +145,10 @@ export default function Home() {
           </div>
 
           {/* div4: 2 kolom × 2 baris */}
-          <div className="col-start-4 col-end-6 row-start-3 row-end-5 relative">
+          <div className="col-start-4 col-end-6 row-start-3 row-end-5 relative group overflow-hidden">
             <img
               src="/images/tenun.png"
-              className="w-full object-cover h-[350px]"
+              className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105 "
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">Tenun Desa Sade</h3>
@@ -158,10 +158,10 @@ export default function Home() {
           </div>
 
           {/* div5: 3 kolom × 2 baris */}
-          <div className="col-start-1 col-end-4 row-start-3 row-end-5 relative">
+          <div className="col-start-1 col-end-4 row-start-3 row-end-5 relative group overflow-hidden">
             <img
               src="/images/adat2.png"
-              className="w-full object-cover h-[350px]"
+              className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-lg font-semibold">Peresean</h3>
@@ -179,15 +179,15 @@ export default function Home() {
           <img
             src="/images/reog.png"
             alt="Reog Icon"
-            className="absolute inset-0 w-full h-full  object-cover z-0"
+            className="absolute inset-0 w-full h-full  object-cover =z-0"
           />
 
           {/* Overlay Black Transparent */}
-          <div className="absolute inset-0 bg-black/20 z-10" />
+          <div className="absolute inset-0 bg-black/20 z-0" />
 
           {/* Text Overlay */}
-          <div className="absolute bottom-20 left-15 text-white max-w-md">
-            <h1 className="text-8xl font-bold leading-tight">
+          <div className="absolute bottom-20 left-15 text-white max-w-md z-2">
+            <h1 className="text-8xl font-bold leading-tight ">
               Today’s <br /> Cultural <br /> Experience
             </h1>
             <p
@@ -334,12 +334,12 @@ export default function Home() {
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-[2.5fr_2fr] grid-rows-7 gap-5 flex-1">
             {/* div1 */}
-            <div className="col-start-1 col-end-2 row-start-1 row-end-5 relative overflow-hidden rounded-md">
+            <div className="col-start-1 col-end-2 row-start-1 row-end-5 relative overflow-hidden rounded-md group  cursor-pointer">
               <Image
                 src="/images/Tortor.jpg"
                 alt="Tari Tortor"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">
@@ -355,12 +355,12 @@ export default function Home() {
             </div>
 
             {/* div2 */}
-            <div className="col-start-1 col-end-2 row-start-5 row-end-8 relative overflow-hidden rounded-md">
+            <div className="col-start-1 col-end-2 row-start-5 row-end-8 relative overflow-hidden rounded-md group hover overflow-hidden cursor-pointer">
               <Image
                 src="/images/RumahBolon.jpg"
                 alt="Rumah Bolon"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">Rumah Bolon</h2>
@@ -372,12 +372,12 @@ export default function Home() {
             </div>
 
             {/* div3 */}
-            <div className="col-start-2 col-end-3 row-start-1 row-end-3 relative overflow-hidden rounded-md">
+            <div className="col-start-2 col-end-3 row-start-1 row-end-3 relative overflow-hidden rounded-md group overflow-hidden  cursor-pointer">
               <Image
                 src="/images/MangokalHoli.jpg"
                 alt="Mangokal Holi"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">Mangokal Holi</h2>
@@ -390,12 +390,12 @@ export default function Home() {
             </div>
 
             {/* div4 */}
-            <div className="col-start-2 col-end-3 row-start-3 row-end-8 relative overflow-hidden rounded-md">
+            <div className="col-start-2 col-end-3 row-start-3 row-end-8 relative overflow-hidden rounded-md group overflow-hidden cursor-pointer">
               <Image
                 src="/images/ulos.jpg"
                 alt="Ulos"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">

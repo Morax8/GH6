@@ -6,21 +6,30 @@ import { useRef } from "react";
 
 export default function explorePage(){
 
-    const categories = ["Food","Art","Music","Dance","Rituals","Theatre"];
-    const provinces = [
-    "Aceh",
-    "North Sumatra",
-    "West Sumatra",
-    "South Sumatra",
-    "Banten",
-    "West Java",
-    "Central Java",
-    "East Java",
-    "Bali",
-    "West Kalimantan",
-    "South Sulawesi",
-    "Papua"
+    const categories = [
+    { name: "Food", image: "/images/rendang.jpg" },
+    { name: "Art", image: "/images/Batik.jpg" },
+    { name: "Music", image: "/images/Gamelan.jpg" },
+    { name: "Dance", image: "/images/TariTradisional.jpg" },
+    { name: "Rituals", image: "/images/bali.png" },
+    { name: "Theatre", image: "/images/WayangExplore.jpg" },
     ];
+
+    const provinces = [
+    { name: "Aceh", image: "/images/Aceh.jpg" },
+    { name: "North Sumatra", image: "/images/Tortor.jpg" },
+    { name: "West Sumatra", image: "/images/Rendang.jpg" },
+    { name: "South Sumatra", image: "/images/SouthSumatra.jpg" },
+    { name: "Banten", image: "/images/Banten.jpg" },
+    { name: "West Java", image: "/images/WestJava.jpg" },
+    { name: "Central Java", image: "/images/CentralJava.jpg" },
+    { name: "East Java", image: "/images/reog.png" },
+    { name: "Bali", image: "/images/bali.png" },
+    { name: "West Kalimantan", image: "/images/WestKalimantan.jpg" },
+    { name: "South Sulawesi", image: "/images/SouthSulawesi.jpg" },
+    { name: "Papua", image: "/images/Papua.jpg" },
+    ];
+
 
     const carouselRef = useRef();
     let index = 0;
@@ -43,7 +52,7 @@ export default function explorePage(){
 
     setInterval(() => {
         handleScroll(1);
-    }, 400000);
+    }, 4000);
 
     return(
         <div className="grid grid-cols-12 gap-5 place-content-start bg-white min-h-screen overflow-hidden relative">
@@ -55,14 +64,14 @@ export default function explorePage(){
                 <Navbar />
             </div>
 
-          <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent -top-0 opacity-50 z-0">
-            <Image
-              src="/Assets/patternFade.png"
-              alt="Pattern Fade"
-              fill
-              className="opacity-50 rotate-180"
-            />
-          </div>    
+            <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent -top-0 opacity-50 z-0">
+                <Image
+                    src="/Assets/patternFade.png"
+                    alt="Pattern Fade"
+                    fill
+                    className="opacity-50 rotate-180"
+                />
+            </div>    
 
             <div className="relative flex flex-col justify-center items-center col-span-12 gap-8 font-semibold h-screen px-32">
                 <div className="text-5xl text-black z-2">
@@ -91,19 +100,29 @@ export default function explorePage(){
                         {categories.map((category,i)=>(
                         <div
                             key={i}
-                            className="h-60 w-76 bg-neutral-200 flex-none relative"
+                            className="h-60 w-76 bg-neutral-200 flex-none relative group overflow-hidden cursor-pointer "
                         >
-                            <div className="absolute bottom-0 left-0 w-full h-[200px] opacity-90 bg-gradient-to-t from-black to-transparent z-0"></div>
 
-                            <div className="absolute bottom-4 left-5 flex flex-col gap-1">
+                            <Image
+                            src={category.image}
+                            alt={category}
+                            fill
+                            className="object-cover z-[0]  transition-transform duration-300 ease-in-out group-hover:scale-105"
+                            />
+
+                            <div className="absolute bottom-0 left-0 w-full h-[200px] opacity-90 bg-gradient-to-t from-black to-transparent z-1 pointer-events-none"></div>
+                            
+                            <div className="absolute bottom-4 left-5 flex flex-col gap-1 z-2 pointer-events-none">
                                 <div className="text-3xl ">
-                                    {category}
-                                </div>
+                                    {category.name} 
+                                </div> 
 
                                 <div className="text-sm font-medium">
                                     282 items
                                 </div>
                             </div>
+
+                                
                         </div>
 
                         ))}
@@ -116,7 +135,12 @@ export default function explorePage(){
 
             <div className="col-span-12 h-screen grid grid-cols-12 relative">
                 <div className="col-span-12 bg-red-200 w-screen bg-red-600 h-96 mb-12 absolute z-1">
-
+                        <Image
+                        src="/images/tenun.png"
+                        alt="Image of a lady making batik"
+                        fill
+                        className="object-cover object-[0_40%]"
+                        />
                 </div>
 
                 <div className="col-span-12 px-32 grid grid-cols-12 gap-5 relative">
@@ -158,9 +182,17 @@ export default function explorePage(){
 
                 <div className="grid grid-cols-12 gap-5 w-full">
                     {provinces.map((province, i) => (
-                        <div key={i} className="col-span-2 h-46 bg-neutral-400 relative w-full">
+                        <div key={i} className="col-span-2 h-46 bg-neutral-400 relative w-full group overflow-hidden cursor-pointer ">
+
+                            <Image
+                            src={province.image}
+                            alt={province}
+                            fill
+                            className="object-cover z-[0]   transition-transform duration-300 ease-in-out group-hover:scale-105"
+                            />
+
                             <div className="absolute font-bold text-white bottom-2 left-2 p-2 w-30 text-2xl z-1">
-                                {province}
+                                {province.name}
                             </div>
                             
                             <div className="absolute bottom-0 left-0 w-full h-[120px] opacity-80 bg-gradient-to-t from-black to-transparent z-0"></div>
