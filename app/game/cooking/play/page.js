@@ -68,7 +68,7 @@ export default function Cooking() {
             }, 2000);
         } else {
             setFeedback("Wrong!");
-            // Do not increment correctCount
+            
         }
     };
 
@@ -85,7 +85,7 @@ export default function Cooking() {
 
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <GridGuides />
+       
         
           <div className="relative w-full h-full opacity-50">
             <Image
@@ -128,14 +128,15 @@ export default function Cooking() {
                 </div> 
             </div>
 
+            <div className="fade-in delay-3">
             <ChoiceGrid
             choices={current.choices}
             onChoiceClick={handleChoiceClick}
             selectedIndex={selectedIndex}
             correctIndex={current.correctIndex}
             isLocked={isLocked}
-            />
-
+            />    
+            </div>
             <div>
 
             </div>
