@@ -104,8 +104,10 @@ export default function Home() {
               className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Barong Sewu</h3>
-              <p className="text-sm">
+              <h3 className="text-3xl font-semibold">Barong Sewu</h3>
+              <p className="text-sm"
+              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >
                 5 Fakta Seru Tari 1000 Barong Kediri yang Bikin Kamu Kagum!
               </p>
             </div>
@@ -120,8 +122,12 @@ export default function Home() {
             />
 
             <div className="absolute bottom-4 left-4 text-white z-10 group overflow-hidden cursor-pointer">
-              <h3 className="text-lg font-semibold">Busana dari Dayak</h3>
-              <p className="text-sm">
+              <h3 className="text-3xl font-bold"
+              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >Busana dari Dayak</h3>
+              <p className="text-sm"
+              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >
                 5 Hal Unik yang harus kamu tahu dari Pakaian Adat Kalimantan
                 Barat Khas Suku Dayak
               </p>
@@ -133,11 +139,13 @@ export default function Home() {
           <div className="col-start-6 col-end-8 row-start-1 row-end-5 relative group overflow-hidden">
             <img
               src="/images/bali.png"
-              className="w-full object-cover h-[700px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
+              className="w-full object-fit h-[700px] transition-transform scale-105  duration-300 ease-in-out group-hover:scale-110 "
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Galungan</h3>
-              <p className="text-sm">
+              <h3 className="text-3xl font-bold">Galungan</h3>
+              <p className="text-sm"
+              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >
                 Perayaan Kemenangan Kebenaran ala Bali & Tengger
               </p>
             </div>
@@ -151,8 +159,10 @@ export default function Home() {
               className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105 "
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Tenun Desa Sade</h3>
-              <p className="text-sm">Surganya Kain Tenun Sasak di Lombok!</p>
+              <h3 className="text-3xl font-bold">Tenun Desa Sade</h3>
+              <p className="text-sm"
+              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >Surganya Kain Tenun Sasak di Lombok!</p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -164,8 +174,9 @@ export default function Home() {
               className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-lg font-semibold">Peresean</h3>
-              <p className="text-sm">
+              <h3 className="text-3xl font-bold">Peresean</h3>
+              <p className="text-sm"
+              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}>
                 Seni Tari Pertarungan Khas Sasak yang Seru!
               </p>
             </div>
@@ -413,7 +424,7 @@ export default function Home() {
 
         <div className="relative w-full py-12">
           {/* Ini pastiin ada wrapper div buat z-index */}
-          <div className="relative z-20 bg-transparent">
+          <div className="relative z-20 bg-transparent ">
             <MarqueeGallery />
           </div>
 

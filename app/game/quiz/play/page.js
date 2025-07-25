@@ -92,7 +92,7 @@ export default function QuizPlay() {
 
       {/* Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <GridGuides />
+        {/* <GridGuides /> */}
         <div className="relative w-full h-full opacity-50">
           <Image
             src="/Assets/patternFade.png"
