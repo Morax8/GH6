@@ -65,18 +65,21 @@ export default function Home() {
           <div className="flex h-full w-full">
             {/* Left Side: Text */}
             <div className="w-1/2 flex flex-col justify-center pl-32 z-10 col-span gap">
-              <h1 className="text-7xl font-bold mb-4">Lorem Ipsum</h1>
+              <h1 className="text-7xl font-bold mb-4">
+                Play Through Culture, Grow With Stories
+              </h1>
               <p
                 className="mb-16 text-[24px] w-[500px]"
                 style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                congue lectus eu lacus eleifend, et sodales augue ultrices.
-                Aenean nec quam neque.
+                Explore culture, history, and traditions through digital
+                platform & engaging game-based learning.
               </p>
-              <button className="bg-black text-white text-2xl px-6 py-3 rounded-full w-60">
-                Button
-              </button>
+              <Link href="/explorePage">
+                <button className="bg-black text-white text-2xl px-6 py-3 rounded-full w-60 cursor-pointer">
+                  Let's Explore
+                </button>
+              </Link>
             </div>
 
             {/* Right Side: Full Image */}
