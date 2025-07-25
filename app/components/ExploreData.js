@@ -1,5 +1,82 @@
 export const categories = [{}];
-export const province = [{}];
+export const province = [
+  {
+    name: "Aceh",
+    slug: "aceh",
+    image: "/images/Aceh.jpg",
+    description:
+      "Aceh, located on the northern tip of Sumatra, is known for its rich cultural heritage and natural beauty. The province is famous for its stunning beaches, lush rainforests, and unique traditional music and dance. Aceh's history is marked by its struggle for independence, which has shaped its identity and culture. The province is also known for its delicious cuisine, particularly dishes like Nasi Goreng Aceh and Mie Aceh.",
+  },
+  {
+    name: "North Sumatra",
+    slug: "north-sumatra",
+    image: "/images/Tortor.jpg",
+    description:
+      "North Sumatra is a province in Indonesia known for its diverse",
+  },
+  {
+    name: "West Sumatra",
+    slug: "west-sumatra",
+    image: "/images/Rendang.jpg",
+    description:
+      "West Sumatra is a province in Indonesia known for its rich cultural heritage, particularly the Minangkabau culture. The province is famous for its traditional architecture, delicious cuisine, and vibrant arts scene. West Sumatra is also home to beautiful landscapes, including the stunning Lake Toba, which is the largest volcanic lake in the world. The province's capital, Padang, is known for its bustling markets and historical sites.",
+  },
+  {
+    name: "South Sumatra",
+    slug: "south-sumatra",
+    image: "/images/SouthSumatra.jpg",
+    description: "Tes dlu aja ya",
+  },
+  {
+    name: "Banten",
+    slug: "banten",
+    image: "/images/Banten.jpg",
+    description: "Belum ada deskripsi.",
+  },
+  {
+    name: "West Java",
+    slug: "west-java",
+    image: "/images/WestJava.jpg",
+    description: "Belum ada deskripsi.",
+  },
+  {
+    name: "Central Java",
+    slug: "central-java",
+    image: "/images/CentralJava.jpg",
+    description: "Belum ada deskripsi.",
+  },
+  {
+    name: "East Java",
+    slug: "east-java",
+    image: "/images/reog.png",
+    description: "Belum ada deskripsi.",
+  },
+  {
+    name: "Bali",
+    slug: "bali",
+    image: "/images/bali.png",
+    description: "Belum ada deskripsi.",
+  },
+  {
+    name: "West Kalimantan",
+    slug: "west-kalimantan",
+    image: "/images/WestKalimantan.jpg",
+    description: "Belum ada deskripsi.",
+  },
+  {
+    name: "South Sulawesi",
+    slug: "south-sulawesi",
+    image: "/images/SouthSulawesi.jpg",
+    description: "Belum ada deskripsi.",
+  },
+  {
+    name: "Papua",
+    slug: "papua",
+    image: "/images/Papua.jpg",
+    description: "Belum ada deskripsi.",
+  },
+];
+
 export const homepage = [
   {
     title: "Borobudur Temple",

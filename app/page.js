@@ -106,8 +106,9 @@ export default function Home() {
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-3xl font-semibold">Barong Sewu</h3>
-              <p className="text-sm"
-              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              <p
+                className="text-sm"
+                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
               >
                 5 Fakta Seru Tari 1000 Barong Kediri yang Bikin Kamu Kagum!
               </p>
@@ -123,11 +124,15 @@ export default function Home() {
             />
 
             <div className="absolute bottom-4 left-4 text-white z-10 group overflow-hidden cursor-pointer">
-              <h3 className="text-3xl font-bold"
-              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >Busana dari Dayak</h3>
-              <p className="text-sm"
-              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              <h3
+                className="text-3xl font-bold"
+                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >
+                Busana dari Dayak
+              </h3>
+              <p
+                className="text-sm"
+                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
               >
                 5 Hal Unik yang harus kamu tahu dari Pakaian Adat Kalimantan
                 Barat Khas Suku Dayak
@@ -144,8 +149,9 @@ export default function Home() {
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-3xl font-bold">Galungan</h3>
-              <p className="text-sm"
-              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              <p
+                className="text-sm"
+                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
               >
                 Perayaan Kemenangan Kebenaran ala Bali & Tengger
               </p>
@@ -161,9 +167,12 @@ export default function Home() {
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-3xl font-bold">Tenun Desa Sade</h3>
-              <p className="text-sm"
-              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >Surganya Kain Tenun Sasak di Lombok!</p>
+              <p
+                className="text-sm"
+                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >
+                Surganya Kain Tenun Sasak di Lombok!
+              </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -176,8 +185,10 @@ export default function Home() {
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
               <h3 className="text-3xl font-bold">Peresean</h3>
-              <p className="text-sm"
-              style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}>
+              <p
+                className="text-sm"
+                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
+              >
                 Seni Tari Pertarungan Khas Sasak yang Seru!
               </p>
             </div>
@@ -201,7 +212,6 @@ export default function Home() {
           {/* Text Overlay */}
           <div className="absolute bottom-20 left-15 text-white max-w-md z-2">
             <h1 className="text-8xl font-bold leading-tight ">
-
               Today’s <br /> Cultural <br /> Experience
             </h1>
             <p
@@ -374,7 +384,7 @@ export default function Home() {
             </div>
 
             {/* div2 */}
-            <div className="col-start-1 col-end-2 row-start-5 row-end-8 relative overflow-hidden rounded-md group hover overflow-hidden cursor-pointer">
+            <div className="col-start-1 col-end-2 row-start-5 row-end-8 relative overflow-hidden rounded-md group hover cursor-pointer">
               <Image
                 src="/images/RumahBolon.jpg"
                 alt="Rumah Bolon"
@@ -391,7 +401,7 @@ export default function Home() {
             </div>
 
             {/* div3 */}
-            <div className="col-start-2 col-end-3 row-start-1 row-end-3 relative overflow-hidden rounded-md group overflow-hidden  cursor-pointer">
+            <div className="col-start-2 col-end-3 row-start-1 row-end-3 relative overflow-hidden rounded-md group cursor-pointer">
               <Image
                 src="/images/MangokalHoli.jpg"
                 alt="Mangokal Holi"
@@ -409,7 +419,7 @@ export default function Home() {
             </div>
 
             {/* div4 */}
-            <div className="col-start-2 col-end-3 row-start-3 row-end-8 relative overflow-hidden rounded-md group overflow-hidden cursor-pointer">
+            <div className="col-start-2 col-end-3 row-start-3 row-end-8 relative overflow-hidden rounded-md group cursor-pointer">
               <Image
                 src="/images/ulos.jpg"
                 alt="Ulos"
