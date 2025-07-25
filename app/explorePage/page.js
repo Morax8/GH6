@@ -73,62 +73,39 @@ export default function explorePage(){
                 />
             </div>    
 
-            <div className="relative flex flex-col justify-center items-center col-span-12 gap-8 font-semibold h-screen px-32">
-                <div className="text-5xl text-black z-2">
-                    Categories
+            <div className="relative flex justify-center items-center col-span-12 gap-10 font-semibold h-screen px-32 mt-5">
 
-                </div>
-
-                <div className='relative h-65 w-full'>
-                    <button className='absolute z-100 -left-5 top-[40%] btn btn-soft btn-warning rounded-full bg-black text-white text-xl  focus:border-none'
-                        onClick={()=>handleScroll(-1)}
-                    >
-                    &lt;
-                    </button>
-
-                    <button className='absolute z-100 -right-5  top-[40%] btn btn-soft btn-warning rounded-full bg-black text-white text-xl focus:border-none'
-                        onClick={()=>handleScroll(1)}
-                    >
-                        &gt;
-                    </button>
-
-                    <div 
-                    id="carousel"
-                    className='absolute flex h-full w-full rounded-lg overflow-x-auto gap-5 items-center '
-                    ref={carouselRef}
-                    >
-                    
-                        {categories.map((category,i)=>(
-                        <div
-                            key={i}
-                            className="h-60 w-76 bg-neutral-200 flex-none relative group overflow-hidden cursor-pointer "
-                        >
+                <div className="grid grid-cols-12 gap-5 w-200">
+                    {categories.map((category, i) => (
+                        <div key={i} className="col-span-4 h-60 bg-neutral-400 relative w-full group overflow-hidden cursor-pointer rounded-lg">
 
                             <Image
                             src={category.image}
                             alt={category}
                             fill
-                            className="object-cover z-[0]  transition-transform duration-300 ease-in-out group-hover:scale-105"
+                            className="object-cover z-[0]   transition-transform duration-300 ease-in-out group-hover:scale-105"
                             />
 
-                            <div className="absolute bottom-0 left-0 w-full h-[200px] opacity-90 bg-gradient-to-t from-black to-transparent z-1 pointer-events-none"></div>
-                            
-                            <div className="absolute bottom-4 left-5 flex flex-col gap-1 z-2 pointer-events-none">
-                                <div className="text-3xl ">
-                                    {category.name} 
-                                </div> 
-
-                                <div className="text-sm font-medium">
-                                    282 items
-                                </div>
+                            <div className="absolute font-bold text-white bottom-2 left-2 p-2 w-30 text-2xl z-1">
+                                {category.name}
                             </div>
-
-                                
+                            
+                            <div className="absolute bottom-0 left-0 w-full h-[120px] opacity-80 bg-gradient-to-t from-black to-transparent z-0"></div>
                         </div>
+                    ))} 
+                </div> 
 
-                        ))}
+                <div className=" flex flex-col items-start gap-3">
+                    <div className="text-7xl text-black font-bold z-2">
+                        Categories
                     </div>
+
+                    <div className="text-4xl text-black font-normal z-2">
+                        to Discover...
+                    </div>
+
                 </div>
+        
             </div>
 
 

@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function TimerForGuessingGame({ timeLeft, setTimeLeft, onComplete = () => {}, className = '' }) {
+export default function TimeLeftTimer({ timeLeft, setTimeLeft, onComplete = () => {}, className = '' }) {
   useEffect(() => {
     if (timeLeft <= 0) {
       onComplete();
@@ -25,7 +25,7 @@ export default function TimerForGuessingGame({ timeLeft, setTimeLeft, onComplete
     const mins = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-  };
+  };npm
 
   return (
     <span className={`text-5xl text-black font-bold ${className}`}>
