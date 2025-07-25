@@ -44,7 +44,7 @@ const CulturalBuildings = [
     id: 4,
     name: "Maimun Palace",
     location: "Medan, North Sumatra",
-    coordinates: { lat: 3.5785, lng: 98.6832 },
+    coordinates: { lat: 3.57528, lng: 98.68389 },
     hints: [
       "A royal palace of the Sultanate of Deli.",
       "Built in the late 19th century by Sultan Ma'mun Al Rasyid.",
