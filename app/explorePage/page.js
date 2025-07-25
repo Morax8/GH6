@@ -81,7 +81,7 @@ export default function explorePage() {
       </div>
 
       <div className="col-span-12 h-screen grid grid-cols-12 relative">
-        <div className="col-span-12 w-screen bg-red-600 h-96 mb-12 absolute z-1">
+        <div className="col-span-12 w-screen bg-red-600 h-120 mb-12 absolute z-1">
           <Image
             src="/images/tenun.png"
             alt="Image of a lady making batik"
@@ -92,23 +92,23 @@ export default function explorePage() {
 
         <div className="col-span-12 px-32 grid grid-cols-12 gap-5 relative">
           <div className="col-span-5 flex flex-col justify-center h-full text-black mt-51">
-            <div className="font-semibold text-5xl mb-6">This is _______</div>
+            <div className="font-semibold text-5xl mb-6">
+              This is Menenun: A Legacy in Every Thread
+            </div>
 
             <div
               className="text-[16px] mb-13 font-medium"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              aliquet laoreet dolor, eget consectetur orci tempus vel.
+              From the hands of Indonesian artisans comes more than just fabric,
+              it's a woven legacy of culture, identity, and pride. Each thread
+              intertwines generations of tradition, telling stories not just of
+              the past, but of the future we continue to create.
             </div>
-
-            <button className="bg-black text-white text-xl px-6 py-2 rounded-full w-66 mb-3">
-              Learn more
-            </button>
           </div>
         </div>
 
-        <div className="absolute top left-170 z-[0]">
+        <div className="absolute top left-250 z-[0]">
           <Image
             src="/Assets/BgSupergrapicFade.png"
             alt="Pattern Fade"

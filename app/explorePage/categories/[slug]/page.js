@@ -53,21 +53,21 @@ export default function CategoriesPage(props) {
           {/* Kolom 1 */}
           <div className="relative col-start-1 col-end-2 row-start-1 row-end-2">
             <img
-              src="/images/BorobudurPotrait1.jpg"
+              src={data.img1}
               alt="Image 1"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </div>
           <div className="relative col-start-1 col-end-2 row-start-2 row-end-6">
             <img
-              src="/images/BorobudurPotrait2.jpg"
+              src={data.img2}
               alt="Image 2"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </div>
           <div className="relative col-start-1 col-end-2 row-start-6 row-end-8">
             <img
-              src="/images/BorobudurPotrait3.jpg"
+              src={data.img3}
               alt="Image 3"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
@@ -76,14 +76,14 @@ export default function CategoriesPage(props) {
           {/* Kolom 2 */}
           <div className="relative col-start-2 col-end-3 row-start-1 row-end-5">
             <img
-              src="/images/BorobudurPotrait4.jpg"
+              src={data.img4}
               alt="Image 4"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </div>
           <div className="relative col-start-2 col-end-3 row-start-5 row-end-9">
             <img
-              src="/images/BorobudurPotrait5.jpg"
+              src={data.img5}
               alt="Image 5"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
@@ -92,14 +92,14 @@ export default function CategoriesPage(props) {
           {/* Kolom 3 */}
           <div className="relative col-start-3 col-end-4 row-start-1 row-end-3">
             <img
-              src="/images/BorobudurPotrait6.jpg"
+              src={data.img6}
               alt="Image 6"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </div>
           <div className="relative col-start-3 col-end-4 row-start-3 row-end-7">
             <img
-              src="/images/BorobudurSquare1.jpg"
+              src={data.img7}
               alt="Image 7"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
