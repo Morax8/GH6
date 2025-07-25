@@ -97,100 +97,76 @@ export default function Home() {
         <div className="text-center mt-20 mb-10">
           <h1 className="text-6xl font-semibold mb-6">Today's Top Picks</h1>
         </div>
+
         <div className="grid grid-cols-7 grid-rows-5 gap-4 w-full max-w-screen-xl mx-auto">
           {/* div1: 2 kolom × 2 baris */}
-          <div className="col-start-1 col-end-3 row-start-1 row-end-3 relative group overflow-hidden cursor-pointer">
+          <div className="col-start-1 col-end-3 row-start-1 row-end-3 relative group overflow-hidden rounded-xl">
             <img
               src="/images/reog.png"
-              className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
+              className="w-full object-cover h-[350px] transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-3xl font-semibold">Barong Sewu</h3>
-              <p
-                className="text-sm"
-                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >
-                5 Fakta Seru Tari 1000 Barong Kediri yang Bikin Kamu Kagum!
-              </p>
+              <h3 className="text-lg font-semibold">Barongan</h3>
+              <p className="text-sm">The Magical Art Uniting Javanese Souls!</p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
 
           {/* div2: 3 kolom × 2 baris */}
-          <div className="col-start-3 col-end-6 row-start-1 row-end-3 relative group overflow-hidden">
+          <div className="col-start-3 col-end-6 row-start-1 row-end-3 relative group overflow-hidden rounded-xl">
             <img
               src="/images/bajuAdat.png"
-              className="w-full object-cover object-[center_25%] h-[350px] transition-transform duration-300 ease-in-out group-hover:scale-105 "
+              className="w-full object-cover object-[center_25%] h-[350px] transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
-
-            <div className="absolute bottom-4 left-4 text-white z-10 group overflow-hidden cursor-pointer">
-              <h3
-                className="text-3xl font-bold"
-                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >
-                Busana dari Dayak
+            <div className="absolute bottom-4 left-4 text-white z-10">
+              <h3 className="text-lg font-semibold">
+                Dayak Traditional Attire
               </h3>
-              <p
-                className="text-sm"
-                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >
-                5 Hal Unik yang harus kamu tahu dari Pakaian Adat Kalimantan
-                Barat Khas Suku Dayak
+              <p className="text-sm">
+                More Than Just Clothing, reflects social status and cultural
+                heritage.
               </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
 
-          {/* div3: 2 kolom × 4 baris (tinggi jadi 2x) */}
-          <div className="col-start-6 col-end-8 row-start-1 row-end-5 relative group overflow-hidden">
+          {/* div3: 2 kolom × 4 baris */}
+          <div className="col-start-6 col-end-8 row-start-1 row-end-5 relative group overflow-hidden rounded-xl">
             <img
               src="/images/bali.png"
-              className="w-full object-fit h-[700px] transition-transform scale-105  duration-300 ease-in-out group-hover:scale-110 "
+              className="w-full object-cover h-[700px] transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-3xl font-bold">Galungan</h3>
-              <p
-                className="text-sm"
-                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >
-                Perayaan Kemenangan Kebenaran ala Bali & Tengger
+              <h3 className="text-lg font-semibold">Galungan</h3>
+              <p className="text-sm">
+                Celebrating the Victory of Dharma in Bali
               </p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
 
           {/* div4: 2 kolom × 2 baris */}
-          <div className="col-start-4 col-end-6 row-start-3 row-end-5 relative group overflow-hidden">
+          <div className="col-start-4 col-end-6 row-start-3 row-end-5 relative group overflow-hidden rounded-xl">
             <img
               src="/images/tenun.png"
-              className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105 "
+              className="w-full object-cover h-[350px] transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-3xl font-bold">Tenun Desa Sade</h3>
-              <p
-                className="text-sm"
-                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >
-                Surganya Kain Tenun Sasak di Lombok!
-              </p>
+              <h3 className="text-lg font-semibold">Tenun Desa Sade</h3>
+              <p className="text-sm">The Heaven of Sasak Weaving in Lombok!</p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
 
           {/* div5: 3 kolom × 2 baris */}
-          <div className="col-start-1 col-end-4 row-start-3 row-end-5 relative group overflow-hidden">
+          <div className="col-start-1 col-end-4 row-start-3 row-end-5 relative group overflow-hidden rounded-xl">
             <img
               src="/images/adat2.png"
-              className="w-full object-cover h-[350px]  transition-transform duration-300 ease-in-out group-hover:scale-105"
+              className="w-full object-cover h-[350px] transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 text-white z-10">
-              <h3 className="text-3xl font-bold">Peresean</h3>
-              <p
-                className="text-sm"
-                style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
-              >
-                Seni Tari Pertarungan Khas Sasak yang Seru!
-              </p>
+              <h3 className="text-lg font-semibold">Peresean</h3>
+              <p className="text-sm">Lombok’s Unique Combat Tradition!</p>
             </div>
             <div className="absolute inset-0 bg-black/30" />
           </div>
@@ -218,9 +194,10 @@ export default function Home() {
               className="mt-2 text-2xl leading-snug"
               style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
             >
-              BARONG SEWU. Pemerintah Kabupaten Kediri sukses menggelar
-              pertunjukan megah tari kolosal 1000 Barong di Simpang Lima Gumul
-              tahun 2017, sebagai puncak acara Pekan Budaya dan Pariwisata.
+              BARONG SEWU. In 2017, the Kediri Regency Government successfully
+              held a magnificent mass performance of 1000 Barong dance at
+              Simpang Lima Gumul, as the grand finale of the Cultural and
+              Tourism Week.
             </p>
           </div>
         </div>
@@ -333,9 +310,10 @@ export default function Home() {
                   className="mt-2 text-2xl leading-snug mb-10"
                   style={{ fontFamily: "var(--font-plus-jakarta-sans)" }}
                 >
-                  Candi Buddha terbesar ini sempat terkubur 10 abad sebelum
-                  dipugar UNESCO, mahakarya abad ke-9 yang memukau dengan 504
-                  stupa dan 2.672 relief Buddha terpanjang di dunia.
+                  This largest Buddhist temple lay buried for ten centuries
+                  before being restored by UNESCO. The magnificent 9th-century
+                  masterpiece features 504 stupas and the world's longest series
+                  of 2,672 Buddhist reliefs.
                 </p>
 
                 <Link href="/borobudur-temple">
@@ -375,10 +353,10 @@ export default function Home() {
                   Tortor & Gondang Sabangunan
                 </h2>
                 <p className="text-sm text-gray-200">
-                  Kamu akan terpukau menyaksikan gerakan magis tari Tortor
-                  diiringi alunan gondang. Setiap gerakan penuh makna ini bukan
-                  sekadar tarian, melainkan doa yang hidup bagi masyarakat
-                  Batak!
+                  You'll be mesmerized by the magical movements of Tortor dance,
+                  accompanied by the haunting melodies of gondang music. Every
+                  meaningful gesture is more than just dance—it's a living
+                  prayer for the Batak people!
                 </p>
               </div>
             </div>
@@ -394,8 +372,9 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">Rumah Bolon</h2>
                 <p className="text-sm text-gray-200">
-                  Mengenal Rumah adat Batak dengan arsitektur unik berbentuk
-                  perahu, atap melengkung, dan ornamen warna-warni.
+                  Discover the Unique Architecture of Batak Traditional Houses
+                  Featuring boat-shaped structures, curved roofs, and vibrant
+                  ornamental designs.
                 </p>
               </div>
             </div>
@@ -411,9 +390,9 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">Mangokal Holi</h2>
                 <p className="text-sm text-gray-200">
-                  Kamu mungkin tak percaya, tapi inilah bentuk penghormatan
-                  tertinggi - menggali kembali tulang leluhur untuk diberikan
-                  tempat lebih layak. Sebuah warisan budaya yang penuh makna!
+                  You might not believe it, but this is the highest form of
+                  respect—recovering ancestors' bones to give them a more
+                  dignified resting place. A cultural heritage rich in meaning!
                 </p>
               </div>
             </div>
@@ -428,12 +407,12 @@ export default function Home() {
               />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
                 <h2 className="font-semibold text-lg">
-                  Ulos: Kain dengan Seribu Makna
+                  Ulos: A Cloth of a Thousand Meanings
                 </h2>
                 <p className="text-sm text-gray-200">
-                  Ketahui setiap helai ulos mengandung doa dan berkat.
-                  Motif-motifnya yang indah ternyata adalah "bahasa rahasia"
-                  warisan leluhur Batak.
+                  Know that every thread of ulos carries prayers and blessings.
+                  Its beautiful patterns are in fact a secret ancestral language
+                  of the Batak people.
                 </p>
               </div>
             </div>

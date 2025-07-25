@@ -6,7 +6,7 @@ const MarqueeGallery = () => {
 
   return (
     <section className="py-12 text-center">
-      <h2 className="text-4xl font-bold mb-8">Let’s explore...</h2>
+      <h2 className="text-6xl font-bold mb-8">Let’s explore...</h2>
 
       <Marquee gradient={false} speed={50} pauseOnHover>
         {cardData.map((card, index) => (
