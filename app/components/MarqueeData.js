@@ -48,8 +48,7 @@ const cardData = [
     title: "Desa Trunyan",
     desc: "Where the dead rest above ground, and ancient Balinese Aga traditions live untouched by time.",
     hasOverlay: true,
-    streetViewUrl:
-      "https://www.google.com/maps/place/Kuburan+Terunyan+View+Point/@-8.2443908,115.4263195,3a,75y,68.66h,37.79t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICs5q78Jg!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAB8u6HYhc5cNCnGZgizadGRJDUHMT04gDGGCDTAy0TSQfwdmEwWpCmuuJqnd-sZCr53PZZh0nui_-ZJ4BaMFv_Oe_zGLbVS6pIpgV7VtzGRy7NYgood7Dt6y5nBUicqumShz9pT-EEB4%3Dw900-h600-k-no-pi52.2083662680891-ya68.6566143657943-ro0-fo100!7i5472!8i2736!4m14!1m7!3m6!1s0x2dd1f6df7c560e13:0xe342157706deb2b0!2sKuburan+Terunyan!8m2!3d-8.2444173!4d115.4266327!16s%2Fg%2F11cn3tl81_!3m5!1s0x2dd1f7005fcbf787:0x98d334541ff16516!8m2!3d-8.24419!4d115.4266863!16s%2Fg%2F11vzv4mp8k?entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D",
+    streetViewUrl: "https://maps.app.goo.gl/neFJCfruGrP5G6Rg9",
   },
   // dst...
 ];

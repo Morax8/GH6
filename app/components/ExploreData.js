@@ -1,4 +1,19 @@
-export const categories = [{}];
+export const categories = [
+  { name: "Food", image: "/images/rendang.jpg", slug: "food" },
+  { name: "Art", image: "/images/Batik.jpg", slug: "art" },
+  { name: "Music", image: "/images/Gamelan.jpg", slug: "music" },
+  {
+    name: "Dance",
+    image: "/images/TariTradisional.jpg",
+    slug: "dance",
+  },
+  { name: "Rituals", image: "/images/bali.png", slug: "rituals" },
+  {
+    name: "Theatre",
+    image: "/images/WayangExplore.jpg",
+    slug: "theatre",
+  },
+];
 export const province = [
   {
     name: "Aceh",

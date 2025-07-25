@@ -1,36 +1,12 @@
 "use client";
 import Navbar from "../components/Navbar";
 import GridGuides from "../components/GridGuides";
-import { province } from "../components/ExploreData";
+import { province, categories } from "../components/ExploreData";
 import Image from "next/image";
 import { useRef } from "react";
 import Link from "next/link"; // pastiin ini ada di atas
 
 export default function explorePage() {
-  const categories = [
-    { name: "Food", image: "/images/rendang.jpg" },
-    { name: "Art", image: "/images/Batik.jpg" },
-    { name: "Music", image: "/images/Gamelan.jpg" },
-    { name: "Dance", image: "/images/TariTradisional.jpg" },
-    { name: "Rituals", image: "/images/bali.png" },
-    { name: "Theatre", image: "/images/WayangExplore.jpg" },
-  ];
-
-  // const provinces = [
-  //   { name: "Aceh", image: "/images/Aceh.jpg" },
-  //   { name: "North Sumatra", image: "/images/Tortor.jpg" },
-  //   { name: "West Sumatra", image: "/images/Rendang.jpg" },
-  //   { name: "South Sumatra", image: "/images/SouthSumatra.jpg" },
-  //   { name: "Banten", image: "/images/Banten.jpg" },
-  //   { name: "West Java", image: "/images/WestJava.jpg" },
-  //   { name: "Central Java", image: "/images/CentralJava.jpg" },
-  //   { name: "East Java", image: "/images/reog.png" },
-  //   { name: "Bali", image: "/images/bali.png" },
-  //   { name: "West Kalimantan", image: "/images/WestKalimantan.jpg" },
-  //   { name: "South Sulawesi", image: "/images/SouthSulawesi.jpg" },
-  //   { name: "Papua", image: "/images/Papua.jpg" },
-  // ];
-
   const carouselRef = useRef();
   let index = 0;
   const boxes = new Array(6).fill(null);
@@ -75,15 +51,16 @@ export default function explorePage() {
       <div className="relative flex justify-center items-center col-span-12 gap-10 font-semibold h-screen px-32 mt-2">
         <div className="grid grid-cols-12 gap-5 w-200">
           {categories.map((category, i) => (
-            <div
+            <Link
               key={i}
+              href={`/explorePage/categories/${category.slug}`}
               className="col-span-4 h-60 bg-neutral-400 relative w-full group overflow-hidden cursor-pointer rounded-lg"
             >
               <Image
                 src={category.image}
-                alt={category}
+                alt={category.name}
                 fill
-                className="object-cover z-[0]   transition-transform duration-300 ease-in-out group-hover:scale-105"
+                className="object-cover z-[0] transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
 
               <div className="absolute font-bold text-white bottom-2 left-2 p-2 w-30 text-2xl z-1">
@@ -91,7 +68,7 @@ export default function explorePage() {
               </div>
 
               <div className="absolute bottom-0 left-0 w-full h-[120px] opacity-80 bg-gradient-to-t from-black to-transparent z-0"></div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className=" flex flex-col items-start gap-3">
